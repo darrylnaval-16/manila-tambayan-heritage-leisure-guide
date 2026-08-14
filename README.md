@@ -1,3 +1,5 @@
-# Manila Heritage Tambayan & Leisure Guide
+# Dick Darryl Naval
 
-Live site: https://darrylnaval-16.github.io/manila-tambayan-heritage-leisure-guide/
+Web Development
+
+Live site: https://darrylnaval-16.github.io/naval_darryl/
