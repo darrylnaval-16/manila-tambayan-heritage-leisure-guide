@@ -1,5 +1,3 @@
 # Dick Darryl Naval
 
-Web Development
-
-Live site: https://darrylnaval-16.github.io/naval_darryl/
+Live site: https://darrylnaval-16.github.io/manila-tambayan-heritage-leisure-guide/
