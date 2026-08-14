@@ -1,0 +1,358 @@
+/* ==============================
+   GENERAL STYLES
+   ============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f0e8;
+    color: #302820;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   HERO SECTION
+   ============================== */
+
+.hero {
+    min-height: 85vh;
+
+    background:
+        linear-gradient(
+            rgba(48, 40, 32, 0.78),
+            rgba(48, 40, 32, 0.78)
+        ),
+        url("images/intramuros.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #ffffff;
+
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    color: #d9c3a5;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.tagline {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: 18px;
+    color: #f1e9dc;
+}
+
+.explore-button {
+    display: inline-block;
+
+    padding: 13px 28px;
+
+    background-color: #c59b6d;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #a87c50;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   MAIN CONTENT
+   ============================== */
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+
+/* ==============================
+   ABOUT SECTION
+   ============================== */
+
+.about-section {
+    display: grid;
+
+    grid-template-columns: 350px 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    margin-bottom: 120px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    box-shadow: 20px 20px 0 #d8c3a8;
+}
+
+.section-label {
+    color: #9a7046;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.about-content h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 45px;
+
+    color: #4b3828;
+
+    margin-bottom: 20px;
+}
+
+.about-content p:not(.section-label) {
+    margin-bottom: 15px;
+    color: #665b52;
+}
+
+
+/* ==============================
+   PLACES SECTION
+   ============================== */
+
+.places-section {
+    padding-top: 20px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+
+    margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    color: #4b3828;
+
+    margin-bottom: 10px;
+}
+
+.section-heading > p:last-child {
+    color: #746a61;
+}
+
+
+/* ==============================
+   PLACE CARDS
+   ============================== */
+
+.places-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.place-card {
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(60, 45, 30, 0.10);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow: 0 18px 40px rgba(60, 45, 30, 0.18);
+}
+
+.card-image {
+    height: 260px;
+
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.place-card:hover .card-image img {
+    transform: scale(1.06);
+}
+
+.card-content {
+    padding: 28px;
+}
+
+.place-number {
+    color: #b38a5c;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.card-content h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 29px;
+
+    color: #4b3828;
+
+    margin: 8px 0 12px;
+}
+
+.card-content p {
+    color: #70675f;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+    background-color: #302820;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+footer h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #d7cec3;
+}
+
+footer .copyright {
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    color: #a99e92;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+
+@media (max-width: 850px) {
+
+    .about-section {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .about-image {
+        max-width: 400px;
+
+        margin: auto;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    main {
+        padding: 60px 18px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .about-content h2 {
+        font-size: 38px;
+    }
+
+    .section-heading h2 {
+        font-size: 38px;
+    }
+
+}
