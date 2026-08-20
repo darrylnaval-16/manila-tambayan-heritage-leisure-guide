@@ -21,6 +21,79 @@ body {
 
 
 /* ==============================
+   NAVIGATION
+   ============================== */
+
+.top-navigation,
+.nav-container {
+    width: 100%;
+    max-width: 1150px;
+
+    margin: 0 auto;
+    padding: 25px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+.site-logo {
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    letter-spacing: 0.5px;
+
+    transition: color 0.3s ease;
+}
+
+.site-logo:hover {
+    color: #d9c3a5;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    padding: 7px 3px;
+
+    transition:
+        color 0.3s ease,
+        border-bottom 0.3s ease;
+}
+
+nav a:hover {
+    color: #d9c3a5;
+}
+
+
+/* ==============================
    HERO SECTION
    ============================== */
 
@@ -38,38 +111,54 @@ body {
     background-position: center;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 
     text-align: center;
+
     color: #ffffff;
 
-    padding: 40px 20px;
+    padding: 0 20px;
 }
 
 .hero-content {
     max-width: 850px;
+
+    width: 100%;
+
+    margin: auto;
+
+    padding: 60px 20px 90px;
 }
 
 .eyebrow {
     font-size: 13px;
+
     letter-spacing: 4px;
+
     margin-bottom: 20px;
+
     color: #d9c3a5;
+
     font-weight: bold;
 }
 
 .hero h1 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: clamp(45px, 7vw, 82px);
+
     line-height: 1.05;
+
     margin-bottom: 25px;
 }
 
 .tagline {
     max-width: 650px;
+
     margin: 0 auto 35px;
+
     font-size: 18px;
+
     color: #f1e9dc;
 }
 
@@ -79,19 +168,45 @@ body {
     padding: 13px 28px;
 
     background-color: #c59b6d;
+
     color: #ffffff;
 
     text-decoration: none;
+
     font-weight: bold;
 
     border-radius: 30px;
 
-    transition: 0.3s;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .explore-button:hover {
     background-color: #a87c50;
+
     transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ==============================
+   HEADER FOR ABOUT & CONTACT
+   ============================== */
+
+.page-header {
+    background:
+        linear-gradient(
+            135deg,
+            #302820,
+            #59483a
+        );
+
+    min-height: auto;
+
+    color: #ffffff;
 }
 
 
@@ -101,7 +216,9 @@ body {
 
 main {
     max-width: 1150px;
+
     margin: auto;
+
     padding: 90px 25px;
 }
 
@@ -135,8 +252,11 @@ main {
 
 .section-label {
     color: #9a7046;
+
     font-size: 13px;
+
     font-weight: bold;
+
     letter-spacing: 3px;
 
     margin-bottom: 10px;
@@ -154,6 +274,7 @@ main {
 
 .about-content p:not(.section-label) {
     margin-bottom: 15px;
+
     color: #665b52;
 }
 
@@ -168,11 +289,13 @@ main {
 
 .section-heading {
     text-align: center;
+
     max-width: 650px;
 
     margin: 0 auto 50px;
 }
 
+.section-heading h1,
 .section-heading h2 {
     font-family: Georgia, "Times New Roman", serif;
 
@@ -207,16 +330,19 @@ main {
 
     overflow: hidden;
 
-    box-shadow: 0 10px 30px rgba(60, 45, 30, 0.10);
+    box-shadow:
+        0 10px 30px rgba(60, 45, 30, 0.10);
 
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .place-card:hover {
     transform: translateY(-10px);
 
-    box-shadow: 0 18px 40px rgba(60, 45, 30, 0.18);
+    box-shadow:
+        0 18px 40px rgba(60, 45, 30, 0.18);
 }
 
 .card-image {
@@ -230,6 +356,8 @@ main {
     height: 100%;
 
     object-fit: cover;
+
+    display: block;
 
     transition: transform 0.5s ease;
 }
@@ -266,6 +394,201 @@ main {
     color: #70675f;
 
     font-size: 15px;
+
+    margin-bottom: 12px;
+}
+
+.card-content p:first-of-type {
+    color: #9a7046;
+
+    font-weight: bold;
+}
+
+
+/* ==============================
+   ABOUT PAGE
+   ============================== */
+
+.about-page {
+    display: grid;
+
+    grid-template-columns: 350px 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    margin-bottom: 100px;
+}
+
+.about-page-image img {
+    width: 100%;
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    box-shadow: 20px 20px 0 #d8c3a8;
+}
+
+.about-page-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 55px;
+
+    line-height: 1.1;
+
+    color: #4b3828;
+
+    margin-bottom: 8px;
+}
+
+.about-page-content h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    color: #9a7046;
+
+    margin-bottom: 22px;
+}
+
+.about-page-content p:not(.section-label) {
+    color: #665b52;
+
+    margin-bottom: 17px;
+}
+
+
+/* ==============================
+   ABOUT - TRUST CARDS
+   ============================== */
+
+.about-details {
+    padding-top: 20px;
+}
+
+.trust-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.info-card {
+    background-color: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 10px 30px rgba(60, 45, 30, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(60, 45, 30, 0.16);
+}
+
+.info-number {
+    color: #b38a5c;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.info-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    color: #4b3828;
+
+    margin: 8px 0 12px;
+}
+
+.info-card p {
+    color: #70675f;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   CONTACT PAGE
+   ============================== */
+
+.contact-page {
+    min-height: 60vh;
+
+    padding-top: 10px;
+}
+
+.contact-card {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    padding: 45px;
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    border-top: 5px solid #b38a5c;
+
+    box-shadow:
+        0 10px 30px rgba(60, 45, 30, 0.10);
+}
+
+.contact-card h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 34px;
+
+    color: #4b3828;
+
+    margin-bottom: 15px;
+}
+
+.contact-card > p {
+    color: #70675f;
+
+    margin-bottom: 25px;
+}
+
+.contact-list {
+    padding-left: 25px;
+}
+
+.contact-list li {
+    color: #665b52;
+
+    margin-bottom: 15px;
+}
+
+.contact-list a {
+    color: #9a7046;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
 }
 
 
@@ -310,6 +633,11 @@ footer .copyright {
 
 @media (max-width: 850px) {
 
+    .top-navigation,
+    .nav-container {
+        padding: 20px;
+    }
+
     .about-section {
         grid-template-columns: 1fr;
 
@@ -322,14 +650,51 @@ footer .copyright {
         margin: auto;
     }
 
+    .about-page {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .about-page-image {
+        max-width: 400px;
+
+        margin: auto;
+    }
+
     .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .place-card {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .trust-grid {
         grid-template-columns: 1fr;
     }
 
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+
+    .top-navigation,
+    .nav-container {
+        flex-direction: column;
+
+        gap: 18px;
+
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
 
     main {
         padding: 60px 18px;
@@ -351,8 +716,38 @@ footer .copyright {
         font-size: 38px;
     }
 
+    .about-page-content h1 {
+        font-size: 42px;
+    }
+
+    .section-heading h1,
     .section-heading h2 {
         font-size: 38px;
+    }
+
+    .contact-card {
+        padding: 30px 25px;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .site-logo {
+        font-size: 18px;
+    }
+
+    nav ul {
+        gap: 14px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
     }
 
 }
