@@ -1,6 +1,6 @@
-/* ==============================
+/* =========================================================
    GENERAL STYLES
-   ============================== */
+   ========================================================= */
 
 * {
     margin: 0;
@@ -25,15 +25,14 @@ img {
 }
 
 
-/* ==============================
+/* =========================================================
    NAVIGATION
-   ============================== */
+   ========================================================= */
 
 .top-navigation,
 .nav-container {
     width: 100%;
     max-width: 1150px;
-
     margin: 0 auto;
     padding: 25px;
 
@@ -68,7 +67,6 @@ nav ul {
     list-style: none;
 
     display: flex;
-
     align-items: center;
 
     gap: 28px;
@@ -88,9 +86,7 @@ nav a {
 
     padding: 7px 3px;
 
-    transition:
-        color 0.3s ease,
-        border-bottom 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -98,9 +94,9 @@ nav a:hover {
 }
 
 
-/* ==============================
+/* =========================================================
    HERO SECTION
-   ============================== */
+   ========================================================= */
 
 .hero {
     min-height: 85vh;
@@ -127,7 +123,6 @@ nav a:hover {
 
 .hero-content {
     max-width: 850px;
-
     width: 100%;
 
     margin: auto;
@@ -193,13 +188,14 @@ nav a:hover {
 
     transform: translateY(-3px);
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20);
 }
 
 
-/* ==============================
+/* =========================================================
    HEADER FOR ABOUT & CONTACT
-   ============================== */
+   ========================================================= */
 
 .page-header {
     background:
@@ -215,9 +211,9 @@ nav a:hover {
 }
 
 
-/* ==============================
+/* =========================================================
    MAIN CONTENT
-   ============================== */
+   ========================================================= */
 
 main {
     max-width: 1150px;
@@ -228,9 +224,53 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+}
+
+.section-label {
+    color: #9a7046;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.section-heading h1,
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    color: #4b3828;
+
+    margin-bottom: 15px;
+}
+
+.section-heading > p:last-child {
+    color: #746a61;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
    ABOUT SECTION
-   ============================== */
+   ========================================================= */
 
 .about-section {
     display: grid;
@@ -246,25 +286,15 @@ main {
 
 .about-image img {
     width: 100%;
+
     height: 350px;
 
     object-fit: cover;
 
     border-radius: 10px;
 
-    box-shadow: 20px 20px 0 #d8c3a8;
-}
-
-.section-label {
-    color: #9a7046;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 10px;
+    box-shadow:
+        20px 20px 0 #d8c3a8;
 }
 
 .about-content h2 {
@@ -284,41 +314,13 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
    PLACES SECTION
-   ============================== */
+   ========================================================= */
 
 .places-section {
     padding-top: 20px;
 }
-
-.section-heading {
-    text-align: center;
-
-    max-width: 650px;
-
-    margin: 0 auto 50px;
-}
-
-.section-heading h1,
-.section-heading h2 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 48px;
-
-    color: #4b3828;
-
-    margin-bottom: 10px;
-}
-
-.section-heading > p:last-child {
-    color: #746a61;
-}
-
-
-/* ==============================
-   PLACE CARDS
-   ============================== */
 
 .places-grid {
     display: grid;
@@ -327,6 +329,11 @@ main {
 
     gap: 28px;
 }
+
+
+/* =========================================================
+   PLACE CARDS
+   ========================================================= */
 
 .place-card {
     background-color: #ffffff;
@@ -358,6 +365,7 @@ main {
 
 .card-image img {
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -408,9 +416,9 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
    READ MORE LINK
-   ============================== */
+   ========================================================= */
 
 .read-more {
     display: inline-block;
@@ -447,9 +455,9 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
    ABOUT PAGE
-   ============================== */
+   ========================================================= */
 
 .about-page {
     display: grid;
@@ -465,13 +473,15 @@ main {
 
 .about-page-image img {
     width: 100%;
+
     height: 390px;
 
     object-fit: cover;
 
     border-radius: 12px;
 
-    box-shadow: 20px 20px 0 #d8c3a8;
+    box-shadow:
+        20px 20px 0 #d8c3a8;
 }
 
 .about-page-content h1 {
@@ -503,9 +513,9 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
    ABOUT - TRUST CARDS
-   ============================== */
+   ========================================================= */
 
 .about-details {
     padding-top: 20px;
@@ -568,9 +578,9 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
    CONTACT PAGE
-   ============================== */
+   ========================================================= */
 
 .contact-page {
     min-height: 60vh;
@@ -578,8 +588,13 @@ main {
     padding-top: 10px;
 }
 
+
+/* =========================================================
+   CONTACT CARD
+   ========================================================= */
+
 .contact-card {
-    max-width: 750px;
+    max-width: 780px;
 
     margin: 0 auto;
 
@@ -587,12 +602,12 @@ main {
 
     background-color: #ffffff;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
     border-top: 5px solid #b38a5c;
 
     box-shadow:
-        0 10px 30px rgba(60, 45, 30, 0.10);
+        0 15px 40px rgba(60, 45, 30, 0.12);
 }
 
 .contact-card h2 {
@@ -602,13 +617,238 @@ main {
 
     color: #4b3828;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
-.contact-card > p {
+.contact-intro {
     color: #70675f;
 
+    margin-bottom: 30px;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-card form {
+    width: 100%;
+}
+
+.contact-card fieldset {
+    border: 1px solid #ddd1c3;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    margin: 0;
+
+    background-color: #fcfaf7;
+}
+
+.contact-card legend {
+    padding: 0 12px;
+
+    color: #9a7046;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group:last-of-type {
     margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   FORM LABELS
+   ========================================================= */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #4b3828;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+   ========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d8cabc;
+
+    border-radius: 7px;
+
+    background-color: #ffffff;
+
+    color: #302820;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa097;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.form-group textarea {
+    min-height: 160px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM FOCUS
+   ========================================================= */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #9a7046;
+
+    background-color: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(154, 112, 70, 0.12);
+}
+
+
+/* =========================================================
+   SEND MESSAGE BUTTON
+   ========================================================= */
+
+.contact-card button {
+    display: block;
+
+    width: 100%;
+
+    padding: 14px 25px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background-color: #302820;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-card button:hover {
+    background-color: #9a7046;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(60, 45, 30, 0.18);
+}
+
+.contact-card button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   OTHER CONTACT METHODS
+   ========================================================= */
+
+.other-contact {
+    margin-top: 45px;
+
+    padding-top: 35px;
+
+    border-top: 1px solid #e5ddd4;
+}
+
+.other-contact h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    color: #4b3828;
+
+    margin-bottom: 10px;
+}
+
+.other-contact > p {
+    color: #70675f;
+
+    margin-bottom: 20px;
 }
 
 .contact-list {
@@ -618,7 +858,13 @@ main {
 .contact-list li {
     color: #665b52;
 
-    margin-bottom: 15px;
+    margin-bottom: 14px;
+
+    line-height: 1.7;
+}
+
+.contact-list strong {
+    color: #4b3828;
 }
 
 .contact-list a {
@@ -627,16 +873,20 @@ main {
     font-weight: bold;
 
     text-decoration: none;
+
+    transition: color 0.3s ease;
 }
 
 .contact-list a:hover {
+    color: #5f4025;
+
     text-decoration: underline;
 }
 
 
-/* ==============================
+/* =========================================================
    PLACE DETAIL PAGE
-   ============================== */
+   ========================================================= */
 
 .place-detail {
     max-width: 1050px;
@@ -647,7 +897,9 @@ main {
 }
 
 
-/* DETAIL HERO */
+/* =========================================================
+   DETAIL HEADER
+   ========================================================= */
 
 .detail-header {
     max-width: 850px;
@@ -692,7 +944,9 @@ main {
 }
 
 
-/* LARGE DETAIL IMAGE */
+/* =========================================================
+   DETAIL IMAGE
+   ========================================================= */
 
 .detail-image {
     width: 100%;
@@ -718,7 +972,9 @@ main {
 }
 
 
-/* DETAIL CONTENT */
+/* =========================================================
+   DETAIL CONTENT
+   ========================================================= */
 
 .detail-content {
     max-width: 900px;
@@ -765,9 +1021,9 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
    DETAILS TABLE
-   ============================== */
+   ========================================================= */
 
 .details-table-wrapper {
     width: 100%;
@@ -825,9 +1081,9 @@ main {
 }
 
 
-/* ==============================
-   BACK TO PLACES BUTTON
-   ============================== */
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
 
 .back-button {
     display: inline-block;
@@ -858,9 +1114,9 @@ main {
 }
 
 
-/* ==============================
+/* =========================================================
    FOOTER
-   ============================== */
+   ========================================================= */
 
 footer {
     background-color: #302820;
@@ -893,9 +1149,9 @@ footer .copyright {
 }
 
 
-/* ==============================
+/* =========================================================
    RESPONSIVE DESIGN
-   ============================== */
+   ========================================================= */
 
 @media (max-width: 850px) {
 
@@ -944,8 +1200,6 @@ footer .copyright {
         grid-template-columns: 1fr;
     }
 
-    /* DETAIL PAGE */
-
     .place-detail {
         padding-top: 65px;
     }
@@ -953,9 +1207,12 @@ footer .copyright {
     .detail-image img {
         height: 450px;
     }
-
 }
 
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -1001,10 +1258,35 @@ footer .copyright {
         font-size: 38px;
     }
 
+    /* CONTACT FORM MOBILE */
+
     .contact-card {
-        padding: 30px 25px;
+        padding: 30px 22px;
     }
 
+    .contact-card fieldset {
+        padding: 22px 18px;
+    }
+
+    .contact-card legend {
+        font-size: 17px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .other-contact {
+        margin-top: 35px;
+
+        padding-top: 30px;
+    }
+
+    .other-contact h2 {
+        font-size: 27px;
+    }
 
     /* DETAIL PAGE */
 
@@ -1050,9 +1332,12 @@ footer .copyright {
     .details-table td {
         padding: 15px;
     }
-
 }
 
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
 
 @media (max-width: 420px) {
 
@@ -1080,4 +1365,11 @@ footer .copyright {
         height: 280px;
     }
 
+    .contact-card {
+        padding: 25px 17px;
+    }
+
+    .contact-card fieldset {
+        padding: 20px 15px;
+    }
 }
