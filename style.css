@@ -1373,3 +1373,156 @@ footer .copyright {
         padding: 20px 15px;
     }
 }
+
+/* ==============================
+   CONTACT FORM
+   ============================== */
+
+.contact-card form {
+    margin-top: 30px;
+}
+
+
+.contact-card fieldset {
+    border: 1px solid #e2d8cc;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #fcfaf7;
+}
+
+
+.contact-card legend {
+    padding: 0 10px;
+    color: #9a7046;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4b3828;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d8cec2;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #302820;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #b38a5c;
+    box-shadow: 0 0 0 3px rgba(179, 138, 92, 0.15);
+}
+
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+.send-button {
+    display: inline-block;
+    border: none;
+    padding: 13px 28px;
+    background-color: #302820;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.send-button:hover {
+    background-color: #9a7046;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(60, 45, 30, 0.15);
+}
+
+
+.send-button:focus {
+    outline: 3px solid rgba(179, 138, 92, 0.35);
+    outline-offset: 3px;
+}
+
+
+/* ==============================
+   SUCCESS MESSAGE
+   ============================== */
+
+.success-message {
+    margin-top: 22px;
+    padding: 15px 18px;
+    border-left: 4px solid #7b9a6b;
+    border-radius: 7px;
+    background-color: #edf5e9;
+    color: #3f6134;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
+.other-contact {
+    margin-top: 30px;
+}
+
+
+/* ==============================
+   CONTACT FORM - MOBILE
+   ============================== */
+
+@media (max-width: 600px) {
+
+    .contact-card fieldset {
+        padding: 22px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+    }
+
+    .send-button {
+        width: 100%;
+        text-align: center;
+    }
+
+}
