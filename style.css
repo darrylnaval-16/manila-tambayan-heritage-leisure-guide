@@ -46,14 +46,10 @@ img {
 
 .site-logo {
     color: #ffffff;
-
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 20px;
     font-weight: bold;
-
     text-decoration: none;
-
     letter-spacing: 0.5px;
 
     transition: color 0.3s ease;
@@ -78,7 +74,6 @@ nav li {
 
 nav a {
     color: #ffffff;
-
     text-decoration: none;
 
     font-size: 15px;
@@ -132,7 +127,6 @@ nav a:hover {
 
 .eyebrow {
     font-size: 13px;
-
     letter-spacing: 4px;
 
     margin-bottom: 20px;
@@ -602,7 +596,7 @@ main {
 
     background-color: #ffffff;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
     border-top: 5px solid #b38a5c;
 
@@ -635,18 +629,25 @@ main {
 
 .contact-card form {
     width: 100%;
+
+    margin-top: 30px;
 }
 
 .contact-card fieldset {
-    border: 1px solid #ddd1c3;
+    border: 1px solid #dfd2c3;
 
-    border-radius: 10px;
+    border-radius: 14px;
 
     padding: 30px;
 
-    margin: 0;
+    margin: 0 0 22px;
 
-    background-color: #fcfaf7;
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfa,
+            #fcf8f2
+        );
 }
 
 .contact-card legend {
@@ -659,6 +660,8 @@ main {
     font-size: 18px;
 
     font-weight: bold;
+
+    letter-spacing: 0.2px;
 }
 
 
@@ -668,6 +671,8 @@ main {
 
 .form-group {
     margin-bottom: 22px;
+
+    position: relative;
 }
 
 .form-group:last-of-type {
@@ -676,10 +681,10 @@ main {
 
 
 /* =========================================================
-   FORM LABELS
+   NORMAL FORM LABELS
    ========================================================= */
 
-.form-group label {
+.form-group > label {
     display: block;
 
     margin-bottom: 8px;
@@ -693,10 +698,12 @@ main {
 
 
 /* =========================================================
-   FORM INPUTS
+   NORMAL TEXT INPUTS
+   IMPORTANT:
+   RADIO + CHECKBOX ARE EXCLUDED
    ========================================================= */
 
-.form-group input,
+.form-group input:not([type="radio"]):not([type="checkbox"]),
 .form-group select,
 .form-group textarea {
     display: block;
@@ -707,7 +714,7 @@ main {
 
     border: 1px solid #d8cabc;
 
-    border-radius: 7px;
+    border-radius: 9px;
 
     background-color: #ffffff;
 
@@ -724,7 +731,8 @@ main {
     transition:
         border-color 0.3s ease,
         box-shadow 0.3s ease,
-        background-color 0.3s ease;
+        background-color 0.3s ease,
+        transform 0.2s ease;
 }
 
 
@@ -759,18 +767,140 @@ main {
 
 
 /* =========================================================
-   FORM FOCUS
+   NORMAL INPUT FOCUS
    ========================================================= */
 
-.form-group input:focus,
+.form-group input:not([type="radio"]):not([type="checkbox"]):focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #9a7046;
+    border-color: #b38a5c;
 
     background-color: #ffffff;
 
     box-shadow:
-        0 0 0 3px rgba(154, 112, 70, 0.12);
+        0 0 0 4px rgba(179, 138, 92, 0.12);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RADIO & CHECKBOX OPTIONS
+   ========================================================= */
+
+/*
+   IMPORTANT FIX:
+
+   Radio buttons and checkboxes are no longer treated
+   like text inputs.
+
+   This keeps every option in one clean horizontal row.
+*/
+
+.form-group:has(input[type="radio"]),
+.form-group:has(input[type="checkbox"]) {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 48px;
+
+    margin-bottom: 14px;
+
+    padding: 12px 14px;
+
+    border-radius: 10px;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   RADIO / CHECKBOX LABEL
+   ========================================================= */
+
+.form-group:has(input[type="radio"]) > label,
+.form-group:has(input[type="checkbox"]) > label {
+    flex: 1;
+
+    margin: 0;
+
+    color: #3e332a;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    line-height: 1.4;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   RADIO / CHECKBOX INPUT
+   ========================================================= */
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    flex: 0 0 auto;
+
+    width: 18px;
+
+    height: 18px;
+
+    min-width: 18px;
+
+    margin: 0;
+
+    padding: 0;
+
+    accent-color: #9a7046;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   OPTION HOVER
+   ========================================================= */
+
+.form-group:has(input[type="radio"]):hover,
+.form-group:has(input[type="checkbox"]):hover {
+    background-color: #f5eee5;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   OPTION WHEN SELECTED
+   ========================================================= */
+
+.form-group:has(input[type="radio"]:checked),
+.form-group:has(input[type="checkbox"]:checked) {
+    background-color: #f1e7da;
+
+    box-shadow:
+        inset 3px 0 0 #b38a5c;
+}
+
+
+/* =========================================================
+   RADIO / CHECKBOX FOCUS
+   ========================================================= */
+
+.form-group input[type="radio"]:focus,
+.form-group input[type="checkbox"]:focus {
+    outline: 3px solid rgba(179, 138, 92, 0.20);
+
+    outline-offset: 3px;
 }
 
 
@@ -778,18 +908,17 @@ main {
    SEND MESSAGE BUTTON
    ========================================================= */
 
+.send-button,
 .contact-card button {
     display: block;
 
     width: 100%;
 
-    padding: 14px 25px;
-
-    margin-top: 5px;
-
     border: none;
 
-    border-radius: 30px;
+    padding: 14px 25px;
+
+    margin-top: 8px;
 
     background-color: #302820;
 
@@ -801,6 +930,8 @@ main {
 
     font-weight: bold;
 
+    border-radius: 30px;
+
     cursor: pointer;
 
     transition:
@@ -809,6 +940,7 @@ main {
         box-shadow 0.3s ease;
 }
 
+.send-button:hover,
 .contact-card button:hover {
     background-color: #9a7046;
 
@@ -818,8 +950,41 @@ main {
         0 8px 20px rgba(60, 45, 30, 0.18);
 }
 
+.send-button:active,
 .contact-card button:active {
     transform: translateY(0);
+}
+
+.send-button:focus,
+.contact-card button:focus {
+    outline: 3px solid rgba(179, 138, 92, 0.30);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+   ========================================================= */
+
+.success-message {
+    margin-top: 22px;
+
+    padding: 15px 18px;
+
+    border-left: 4px solid #7b9a6b;
+
+    border-radius: 8px;
+
+    background-color: #edf5e9;
+
+    color: #3f6134;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    line-height: 1.5;
 }
 
 
@@ -1258,25 +1423,61 @@ footer .copyright {
         font-size: 38px;
     }
 
-    /* CONTACT FORM MOBILE */
+
+    /* =====================================================
+       CONTACT FORM MOBILE
+       ===================================================== */
 
     .contact-card {
         padding: 30px 22px;
+
+        border-radius: 14px;
     }
 
     .contact-card fieldset {
         padding: 22px 18px;
+
+        border-radius: 12px;
     }
 
     .contact-card legend {
         font-size: 17px;
     }
 
-    .form-group input,
+    .form-group input:not([type="radio"]):not([type="checkbox"]),
     .form-group select,
     .form-group textarea {
         font-size: 16px;
     }
+
+
+    /* =====================================================
+       RADIO / CHECKBOX MOBILE
+       ===================================================== */
+
+    .form-group:has(input[type="radio"]),
+    .form-group:has(input[type="checkbox"]) {
+        min-height: 52px;
+
+        padding: 12px 10px;
+
+        gap: 15px;
+    }
+
+    .form-group:has(input[type="radio"]) > label,
+    .form-group:has(input[type="checkbox"]) > label {
+        font-size: 15px;
+    }
+
+    .form-group input[type="radio"],
+    .form-group input[type="checkbox"] {
+        width: 18px;
+
+        height: 18px;
+
+        min-width: 18px;
+    }
+
 
     .other-contact {
         margin-top: 35px;
@@ -1288,7 +1489,10 @@ footer .copyright {
         font-size: 27px;
     }
 
-    /* DETAIL PAGE */
+
+    /* =====================================================
+       DETAIL PAGE
+       ===================================================== */
 
     .place-detail {
         padding: 55px 18px 80px;
@@ -1372,157 +1576,9 @@ footer .copyright {
     .contact-card fieldset {
         padding: 20px 15px;
     }
-}
 
-/* ==============================
-   CONTACT FORM
-   ============================== */
-
-.contact-card form {
-    margin-top: 30px;
-}
-
-
-.contact-card fieldset {
-    border: 1px solid #e2d8cc;
-    border-radius: 10px;
-    padding: 30px;
-    background-color: #fcfaf7;
-}
-
-
-.contact-card legend {
-    padding: 0 10px;
-    color: #9a7046;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-
-.form-group {
-    margin-bottom: 22px;
-}
-
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #4b3828;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 13px 15px;
-    border: 1px solid #d8cec2;
-    border-radius: 7px;
-    background-color: #ffffff;
-    color: #302820;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    outline: none;
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: #b38a5c;
-    box-shadow: 0 0 0 3px rgba(179, 138, 92, 0.15);
-}
-
-
-.form-group textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-
-.form-group select {
-    cursor: pointer;
-}
-
-
-.send-button {
-    display: inline-block;
-    border: none;
-    padding: 13px 28px;
-    background-color: #302820;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    border-radius: 30px;
-    cursor: pointer;
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-.send-button:hover {
-    background-color: #9a7046;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(60, 45, 30, 0.15);
-}
-
-
-.send-button:focus {
-    outline: 3px solid rgba(179, 138, 92, 0.35);
-    outline-offset: 3px;
-}
-
-
-/* ==============================
-   SUCCESS MESSAGE
-   ============================== */
-
-.success-message {
-    margin-top: 22px;
-    padding: 15px 18px;
-    border-left: 4px solid #7b9a6b;
-    border-radius: 7px;
-    background-color: #edf5e9;
-    color: #3f6134;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 1.5;
-}
-
-
-.other-contact {
-    margin-top: 30px;
-}
-
-
-/* ==============================
-   CONTACT FORM - MOBILE
-   ============================== */
-
-@media (max-width: 600px) {
-
-    .contact-card fieldset {
-        padding: 22px;
+    .form-group:has(input[type="radio"]),
+    .form-group:has(input[type="checkbox"]) {
+        padding: 11px 8px;
     }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        font-size: 16px;
-    }
-
-    .send-button {
-        width: 100%;
-        text-align: center;
-    }
-
 }
