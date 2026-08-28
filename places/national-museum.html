@@ -10,11 +10,6 @@
 
     <title>National Museum | Manila Heritage & Leisure Guide</title>
 
-    <!--
-        IMPORTANT:
-        The CSS file is one folder above this page.
-        That is why we use ../style.css
-    -->
     <link rel="stylesheet" href="../style.css">
 
 </head>
@@ -39,12 +34,6 @@
             <nav>
 
                 <ul>
-
-                    <!--
-                        IMPORTANT:
-                        Because this page is inside /places/,
-                        we need ../ to go back to the root.
-                    -->
 
                     <li>
                         <a href="../index.html">
@@ -105,13 +94,6 @@
         <!-- LARGE PHOTO -->
 
         <div class="detail-image">
-
-            <!--
-                IMPORTANT:
-                The image is inside the root images folder.
-                Since this page is inside /places/,
-                we need ../images/
-            -->
 
             <img
                 src="../images/museums.jpg"
@@ -307,6 +289,247 @@
 
 
 
+            <!-- ==============================
+                 SUGGEST A PLACE FORM
+                 ============================== -->
+
+            <section class="detail-section suggestion-section">
+
+                <p class="detail-section-label">
+                    SHARE A DISCOVERY
+                </p>
+
+                <h2>
+                    Suggest a Place
+                </h2>
+
+                <p>
+                    Know a place in Manila that deserves to be included
+                    in this guide? Share your recommendation below.
+                </p>
+
+
+                <div class="contact-card">
+
+                    <h3>
+                        Recommend your favorite spot
+                    </h3>
+
+                    <p>
+                        Tell me what makes the place special and
+                        worth visiting.
+                    </p>
+
+
+                    <form id="suggest-place-form">
+
+
+                        <!-- ==============================
+                             PLACE NAME
+                             ============================== -->
+
+                        <div class="form-group">
+
+                            <label for="place-name">
+                                Place Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="place-name"
+                                name="place-name"
+                                placeholder="Enter the place name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- ==============================
+                             CATEGORY / RADIO BUTTONS
+                             ============================== -->
+
+                        <fieldset>
+
+                            <legend>
+                                What kind of Manila experience does this place offer?
+                            </legend>
+
+
+                            <div class="form-group">
+
+                                <input
+                                    type="radio"
+                                    id="category-food"
+                                    name="category"
+                                    value="food"
+                                    required
+                                >
+
+                                <label for="category-food">
+                                    Food & Dining
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <input
+                                    type="radio"
+                                    id="category-study"
+                                    name="category"
+                                    value="study"
+                                >
+
+                                <label for="category-study">
+                                    Study & Chill
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <input
+                                    type="radio"
+                                    id="category-outdoors"
+                                    name="category"
+                                    value="outdoors"
+                                >
+
+                                <label for="category-outdoors">
+                                    Outdoor & Leisure
+                                </label>
+
+                            </div>
+
+                        </fieldset>
+
+
+
+                        <!-- ==============================
+                             GOOD POINTS / CHECKBOXES
+                             ============================== -->
+
+                        <fieldset>
+
+                            <legend>
+                                What makes this place worth visiting?
+                            </legend>
+
+
+                            <div class="form-group">
+
+                                <input
+                                    type="checkbox"
+                                    id="good-budget"
+                                    name="good-points"
+                                    value="budget-friendly"
+                                >
+
+                                <label for="good-budget">
+                                    Budget-Friendly
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <input
+                                    type="checkbox"
+                                    id="good-photos"
+                                    name="good-points"
+                                    value="great-for-photos"
+                                >
+
+                                <label for="good-photos">
+                                    Great for Photos
+                                </label>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <input
+                                    type="checkbox"
+                                    id="good-atmosphere"
+                                    name="good-points"
+                                    value="relaxing-atmosphere"
+                                >
+
+                                <label for="good-atmosphere">
+                                    Relaxing Atmosphere
+                                </label>
+
+                            </div>
+
+                        </fieldset>
+
+
+
+                        <!-- ==============================
+                             CONTACT EMAIL
+                             ============================== -->
+
+                        <div class="form-group">
+
+                            <label for="suggest-email">
+                                Contact Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="suggest-email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- ==============================
+                             SUBMIT BUTTON
+                             ============================== -->
+
+                        <button
+                            type="submit"
+                            class="send-button"
+                        >
+                            Send Suggestion
+                        </button>
+
+
+
+                        <!-- ==============================
+                             SUCCESS MESSAGE
+                             ============================== -->
+
+                        <p
+                            id="suggest-success-message"
+                            class="success-message"
+                            role="status"
+                            aria-live="polite"
+                            hidden
+                        >
+                            ✓ Suggestion sent successfully!
+                            Thank you for helping improve this guide.
+                        </p>
+
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+
             <!-- BACK BUTTON -->
 
             <a href="../index.html#places"
@@ -342,6 +565,38 @@
         </p>
 
     </footer>
+
+
+
+    <!-- ==============================
+         FORM SUCCESS SCRIPT
+         ============================== -->
+
+    <script>
+
+        const suggestPlaceForm =
+            document.getElementById("suggest-place-form");
+
+        const suggestSuccessMessage =
+            document.getElementById("suggest-success-message");
+
+
+        suggestPlaceForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            suggestSuccessMessage.hidden = false;
+
+            suggestPlaceForm.reset();
+
+            suggestSuccessMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        });
+
+    </script>
 
 
 </body>
