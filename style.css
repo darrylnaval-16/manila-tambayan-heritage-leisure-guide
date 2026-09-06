@@ -242,19 +242,6 @@ main {
 
 
 /* =========================================================
-   10. COMPONENT - HERO BUTTON
-   ========================================================= */
-
-.explore-button {
-    background-color: var(--brand-color);
-}
-
-.explore-button:hover {
-    background-color: #8d633c;
-}
-
-
-/* =========================================================
    11. COMPONENT - PLACE CARDS
    ========================================================= */
 
@@ -270,7 +257,17 @@ main {
 
 .place-card {
     background-color: #ffffff;
-    border-radius: 10px;
+    border-radius: 12px;
+
+    /* REQUIRED: at least 16px padding */
+    padding: 16px;
+
+    /* REQUIRED: colored left border using brand variable */
+    border-left: 6px solid var(--brand-color);
+
+    /* REQUIRED: margin-bottom */
+    margin-bottom: 20px;
+
     overflow: hidden;
 
     box-shadow:
@@ -287,6 +284,7 @@ main {
 .card-image {
     height: 260px;
     overflow: hidden;
+    border-radius: 8px;
 }
 
 .card-image img {
@@ -296,7 +294,7 @@ main {
 }
 
 .card-content {
-    padding: 28px;
+    padding: 20px 12px 12px;
 }
 
 .place-number {
@@ -308,8 +306,11 @@ main {
 
 .card-content h3 {
     font-family: Georgia, "Times New Roman", serif;
+
+    /* REQUIRED: distinct font-size and color */
     font-size: 29px;
     color: var(--ink-color);
+
     margin: 8px 0 12px;
 }
 
@@ -487,8 +488,11 @@ main {
 
 .contact-card fieldset {
     border: 1px solid #dfd2c3;
+
+    /* REQUIRED: padding and border-radius */
     border-radius: 14px;
     padding: 30px;
+
     margin: 0 0 22px;
 
     background-color: #fffdfa;
@@ -496,6 +500,8 @@ main {
 
 .contact-card legend {
     padding: 0 12px;
+
+    /* REQUIRED: brand colour */
     color: var(--brand-color);
 
     font-family: Georgia, "Times New Roman", serif;
@@ -516,12 +522,15 @@ main {
     font-weight: bold;
 }
 
+/* INPUTS AND TEXTAREA */
+
 .form-group input:not([type="radio"]):not([type="checkbox"]),
 .form-group select,
 .form-group textarea {
     display: block;
     width: 100%;
 
+    /* REQUIRED: consistent padding */
     padding: 13px 15px;
 
     border: 1px solid #d8cabc;
@@ -540,11 +549,16 @@ main {
     resize: vertical;
 }
 
+
+/* REQUIRED: VISIBLE FOCUS STATE */
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: var(--brand-color);
-    outline: none;
+
+    outline: 3px solid var(--brand-color);
+    outline-offset: 2px;
 }
 
 
@@ -573,6 +587,7 @@ main {
 .form-group input[type="checkbox"] {
     width: 18px;
     height: 18px;
+
     accent-color: var(--brand-color);
 }
 
@@ -586,24 +601,36 @@ main {
     display: block;
     width: 100%;
 
-    border: none;
-    padding: 14px 25px;
-    margin-top: 8px;
-
-    background-color: var(--ink-color);
+    /* REQUIRED: styled button */
+    background-color: var(--brand-color);
     color: #ffffff;
+
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 30px;
+
+    margin-top: 8px;
 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
 
-    border-radius: 30px;
     cursor: pointer;
 }
 
 .send-button:hover,
 .contact-card button:hover {
-    background-color: var(--brand-color);
+    background-color: var(--ink-color);
+}
+
+
+/* BUTTON FOCUS */
+
+.send-button:focus,
+.contact-card button:focus {
+    outline: 3px solid var(--brand-color);
+    outline-offset: 3px;
 }
 
 
