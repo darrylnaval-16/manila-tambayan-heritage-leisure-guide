@@ -1,11 +1,23 @@
 /* =========================================================
-   GENERAL STYLES
+   1. VARIABLES
+   ========================================================= */
+
+:root {
+    --brand-color: #b38a5c;
+    --ink-color: #302820;
+    --muted-color: #70675f;
+    --light-bg: #f5f0e8;
+}
+
+
+/* =========================================================
+   2. BASE STYLES
    ========================================================= */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -14,9 +26,9 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f0e8;
-    color: #302820;
     line-height: 1.7;
+    color: var(--ink-color);
+    background-color: var(--light-bg);
 }
 
 img {
@@ -26,7 +38,44 @@ img {
 
 
 /* =========================================================
-   NAVIGATION
+   3. LAYOUT REGIONS - HEADER
+   ========================================================= */
+
+.hero {
+    min-height: 85vh;
+    padding: 0 20px;
+
+    background:
+        linear-gradient(
+            rgba(48, 40, 32, 0.78),
+            rgba(48, 40, 32, 0.78)
+        ),
+        url("images/intramuros.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    color: #ffffff;
+}
+
+.page-header {
+    background:
+        linear-gradient(
+            135deg,
+            var(--ink-color),
+            #59483a
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   4. LAYOUT REGIONS - NAVIGATION
    ========================================================= */
 
 .top-navigation,
@@ -51,25 +100,26 @@ img {
     font-weight: bold;
     text-decoration: none;
     letter-spacing: 0.5px;
-
-    transition: color 0.3s ease;
 }
 
 .site-logo:hover {
-    color: #d9c3a5;
+    color: var(--brand-color);
 }
+
+
+/* =========================================================
+   5. NAVIGATION BAR
+   ========================================================= */
 
 nav ul {
     list-style: none;
-
-    display: flex;
-    align-items: center;
-
-    gap: 28px;
+    padding: 0;
 }
 
 nav li {
+    display: inline-block;
     list-style: none;
+    margin-left: 25px;
 }
 
 nav a {
@@ -80,236 +130,132 @@ nav a {
     font-weight: bold;
 
     padding: 7px 3px;
-
-    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #d9c3a5;
+    color: var(--brand-color);
 }
 
 
 /* =========================================================
-   HERO SECTION
+   6. HERO CONTENT
    ========================================================= */
-
-.hero {
-    min-height: 85vh;
-
-    background:
-        linear-gradient(
-            rgba(48, 40, 32, 0.78),
-            rgba(48, 40, 32, 0.78)
-        ),
-        url("images/intramuros.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    flex-direction: column;
-
-    text-align: center;
-
-    color: #ffffff;
-
-    padding: 0 20px;
-}
 
 .hero-content {
     max-width: 850px;
     width: 100%;
-
     margin: auto;
-
     padding: 60px 20px 90px;
 }
 
 .eyebrow {
     font-size: 13px;
     letter-spacing: 4px;
-
     margin-bottom: 20px;
-
-    color: #d9c3a5;
-
+    color: var(--brand-color);
     font-weight: bold;
 }
 
 .hero h1 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: clamp(45px, 7vw, 82px);
-
     line-height: 1.05;
-
     margin-bottom: 25px;
 }
 
 .tagline {
     max-width: 650px;
-
     margin: 0 auto 35px;
-
     font-size: 18px;
-
     color: #f1e9dc;
 }
 
-.explore-button {
+
+/* =========================================================
+   7. COMPONENT - BUTTONS
+   ========================================================= */
+
+.explore-button,
+.back-button {
     display: inline-block;
 
     padding: 13px 28px;
 
-    background-color: #c59b6d;
-
+    background-color: var(--brand-color);
     color: #ffffff;
 
     text-decoration: none;
-
     font-weight: bold;
 
     border-radius: 30px;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
-.explore-button:hover {
-    background-color: #a87c50;
-
+.explore-button:hover,
+.back-button:hover {
+    background-color: #8d633c;
     transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.20);
 }
 
 
 /* =========================================================
-   HEADER FOR ABOUT & CONTACT
-   ========================================================= */
-
-.page-header {
-    background:
-        linear-gradient(
-            135deg,
-            #302820,
-            #59483a
-        );
-
-    min-height: auto;
-
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   MAIN CONTENT
+   8. LAYOUT REGIONS - MAIN
    ========================================================= */
 
 main {
     max-width: 1150px;
-
-    margin: auto;
-
+    margin: 0 auto;
     padding: 90px 25px;
 }
 
 
 /* =========================================================
-   SECTION HEADING
+   9. COMPONENT - SECTION HEADINGS
    ========================================================= */
 
 .section-heading {
     text-align: center;
-
     max-width: 700px;
-
     margin: 0 auto 55px;
 }
 
 .section-label {
-    color: #9a7046;
-
+    color: var(--brand-color);
     font-size: 13px;
-
     font-weight: bold;
-
     letter-spacing: 3px;
-
     margin-bottom: 10px;
 }
 
 .section-heading h1,
 .section-heading h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 48px;
-
     line-height: 1.15;
-
-    color: #4b3828;
-
+    color: var(--ink-color);
     margin-bottom: 15px;
 }
 
 .section-heading > p:last-child {
-    color: #746a61;
-
+    color: var(--muted-color);
     font-size: 16px;
 }
 
 
 /* =========================================================
-   ABOUT SECTION
+   10. COMPONENT - HERO BUTTON
    ========================================================= */
 
-.about-section {
-    display: grid;
-
-    grid-template-columns: 350px 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-
-    margin-bottom: 120px;
+.explore-button {
+    background-color: var(--brand-color);
 }
 
-.about-image img {
-    width: 100%;
-
-    height: 350px;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    box-shadow:
-        20px 20px 0 #d8c3a8;
-}
-
-.about-content h2 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 45px;
-
-    color: #4b3828;
-
-    margin-bottom: 20px;
-}
-
-.about-content p:not(.section-label) {
-    margin-bottom: 15px;
-
-    color: #665b52;
+.explore-button:hover {
+    background-color: #8d633c;
 }
 
 
 /* =========================================================
-   PLACES SECTION
+   11. COMPONENT - PLACE CARDS
    ========================================================= */
 
 .places-section {
@@ -318,30 +264,17 @@ main {
 
 .places-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 28px;
 }
 
-
-/* =========================================================
-   PLACE CARDS
-   ========================================================= */
-
 .place-card {
     background-color: #ffffff;
-
     border-radius: 10px;
-
     overflow: hidden;
 
     box-shadow:
         0 10px 30px rgba(60, 45, 30, 0.10);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
 .place-card:hover {
@@ -353,22 +286,13 @@ main {
 
 .card-image {
     height: 260px;
-
     overflow: hidden;
 }
 
 .card-image img {
     width: 100%;
-
     height: 100%;
-
     object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-.place-card:hover .card-image img {
-    transform: scale(1.06);
 }
 
 .card-content {
@@ -376,102 +300,72 @@ main {
 }
 
 .place-number {
-    color: #b38a5c;
-
+    color: var(--brand-color);
     font-size: 13px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
 .card-content h3 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 29px;
-
-    color: #4b3828;
-
+    color: var(--ink-color);
     margin: 8px 0 12px;
 }
 
 .card-content p {
-    color: #70675f;
-
+    color: var(--muted-color);
     font-size: 15px;
-
     margin-bottom: 12px;
 }
 
 .card-content p:first-of-type {
-    color: #9a7046;
-
+    color: var(--brand-color);
     font-weight: bold;
 }
 
 
 /* =========================================================
-   READ MORE LINK
+   12. COMPONENT - READ MORE
    ========================================================= */
 
 .read-more {
     display: inline-block;
-
     margin-top: 8px;
 
-    color: #8d633c;
+    color: var(--brand-color);
 
     font-size: 15px;
-
     font-weight: bold;
 
     text-decoration: none;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-.read-more span {
-    display: inline-block;
-
-    margin-left: 5px;
-
-    transition: transform 0.3s ease;
 }
 
 .read-more:hover {
-    color: #5f4025;
+    color: var(--ink-color);
 }
 
-.read-more:hover span {
-    transform: translateX(5px);
+.read-more span {
+    margin-left: 5px;
 }
 
 
 /* =========================================================
-   ABOUT PAGE
+   13. COMPONENT - ABOUT PAGE
    ========================================================= */
 
 .about-page {
     display: grid;
-
     grid-template-columns: 350px 1fr;
-
     gap: 70px;
-
     align-items: center;
-
     margin-bottom: 100px;
 }
 
 .about-page-image img {
     width: 100%;
-
     height: 390px;
-
     object-fit: cover;
-
     border-radius: 12px;
 
     box-shadow:
@@ -480,35 +374,27 @@ main {
 
 .about-page-content h1 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 55px;
-
     line-height: 1.1;
-
-    color: #4b3828;
-
+    color: var(--ink-color);
     margin-bottom: 8px;
 }
 
 .about-page-content h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 30px;
-
-    color: #9a7046;
-
+    color: var(--brand-color);
     margin-bottom: 22px;
 }
 
 .about-page-content p:not(.section-label) {
-    color: #665b52;
-
+    color: var(--muted-color);
     margin-bottom: 17px;
 }
 
 
 /* =========================================================
-   ABOUT - TRUST CARDS
+   14. COMPONENT - TRUST CARDS
    ========================================================= */
 
 .about-details {
@@ -517,88 +403,62 @@ main {
 
 .trust-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 28px;
 }
 
 .info-card {
     background-color: #ffffff;
-
     padding: 30px;
-
     border-radius: 10px;
 
     box-shadow:
         0 10px 30px rgba(60, 45, 30, 0.10);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
 .info-card:hover {
     transform: translateY(-7px);
-
-    box-shadow:
-        0 15px 35px rgba(60, 45, 30, 0.16);
 }
 
 .info-number {
-    color: #b38a5c;
-
+    color: var(--brand-color);
     font-size: 13px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
 .info-card h3 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 25px;
-
-    color: #4b3828;
-
+    color: var(--ink-color);
     margin: 8px 0 12px;
 }
 
 .info-card p {
-    color: #70675f;
-
+    color: var(--muted-color);
     font-size: 15px;
 }
 
 
 /* =========================================================
-   CONTACT PAGE
+   15. COMPONENT - CONTACT PAGE
    ========================================================= */
 
 .contact-page {
     min-height: 60vh;
-
     padding-top: 10px;
 }
 
-
-/* =========================================================
-   CONTACT CARD
-   ========================================================= */
-
 .contact-card {
     max-width: 780px;
-
     margin: 0 auto;
 
     padding: 45px;
 
     background-color: #ffffff;
-
     border-radius: 18px;
 
-    border-top: 5px solid #b38a5c;
+    border-top: 5px solid var(--brand-color);
 
     box-shadow:
         0 15px 40px rgba(60, 45, 30, 0.12);
@@ -606,414 +466,174 @@ main {
 
 .contact-card h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 34px;
-
-    color: #4b3828;
-
+    color: var(--ink-color);
     margin-bottom: 12px;
 }
 
-.contact-intro {
-    color: #70675f;
-
-    margin-bottom: 30px;
-
-    font-size: 16px;
+.contact-card p {
+    color: var(--muted-color);
 }
 
 
 /* =========================================================
-   CONTACT FORM
+   16. COMPONENT - FORM
    ========================================================= */
 
 .contact-card form {
     width: 100%;
-
     margin-top: 30px;
 }
 
 .contact-card fieldset {
     border: 1px solid #dfd2c3;
-
     border-radius: 14px;
-
     padding: 30px;
-
     margin: 0 0 22px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fffdfa,
-            #fcf8f2
-        );
+    background-color: #fffdfa;
 }
 
 .contact-card legend {
     padding: 0 12px;
-
-    color: #9a7046;
+    color: var(--brand-color);
 
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 18px;
-
     font-weight: bold;
-
-    letter-spacing: 0.2px;
 }
-
-
-/* =========================================================
-   FORM GROUP
-   ========================================================= */
 
 .form-group {
     margin-bottom: 22px;
-
-    position: relative;
 }
-
-.form-group:last-of-type {
-    margin-bottom: 25px;
-}
-
-
-/* =========================================================
-   NORMAL FORM LABELS
-   ========================================================= */
 
 .form-group > label {
     display: block;
-
     margin-bottom: 8px;
 
-    color: #4b3828;
-
+    color: var(--ink-color);
     font-size: 15px;
-
     font-weight: bold;
 }
-
-
-/* =========================================================
-   NORMAL TEXT INPUTS
-   IMPORTANT:
-   RADIO + CHECKBOX ARE EXCLUDED
-   ========================================================= */
 
 .form-group input:not([type="radio"]):not([type="checkbox"]),
 .form-group select,
 .form-group textarea {
     display: block;
-
     width: 100%;
 
     padding: 13px 15px;
 
     border: 1px solid #d8cabc;
-
     border-radius: 9px;
 
     background-color: #ffffff;
-
-    color: #302820;
+    color: var(--ink-color);
 
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 15px;
-
     line-height: 1.5;
-
-    outline: none;
-
-    transition:
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        background-color 0.3s ease,
-        transform 0.2s ease;
 }
-
-
-/* =========================================================
-   PLACEHOLDER
-   ========================================================= */
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: #aaa097;
-}
-
-
-/* =========================================================
-   TEXTAREA
-   ========================================================= */
 
 .form-group textarea {
     min-height: 160px;
-
     resize: vertical;
 }
 
-
-/* =========================================================
-   SELECT
-   ========================================================= */
-
-.form-group select {
-    cursor: pointer;
-}
-
-
-/* =========================================================
-   NORMAL INPUT FOCUS
-   ========================================================= */
-
-.form-group input:not([type="radio"]):not([type="checkbox"]):focus,
+.form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: #b38a5c;
-
-    background-color: #ffffff;
-
-    box-shadow:
-        0 0 0 4px rgba(179, 138, 92, 0.12);
-
-    transform: translateY(-1px);
+    border-color: var(--brand-color);
+    outline: none;
 }
 
 
 /* =========================================================
-   RADIO & CHECKBOX OPTIONS
+   17. COMPONENT - RADIO AND CHECKBOX
    ========================================================= */
-
-/*
-   IMPORTANT FIX:
-
-   Radio buttons and checkboxes are no longer treated
-   like text inputs.
-
-   This keeps every option in one clean horizontal row.
-*/
 
 .form-group:has(input[type="radio"]),
 .form-group:has(input[type="checkbox"]) {
     display: flex;
-
     align-items: center;
+    gap: 12px;
 
-    justify-content: space-between;
-
-    gap: 20px;
-
-    min-height: 48px;
-
-    margin-bottom: 14px;
-
-    padding: 12px 14px;
-
-    border-radius: 10px;
-
-    transition:
-        background-color 0.25s ease,
-        transform 0.25s ease;
+    min-height: 45px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
 }
-
-
-/* =========================================================
-   RADIO / CHECKBOX LABEL
-   ========================================================= */
 
 .form-group:has(input[type="radio"]) > label,
 .form-group:has(input[type="checkbox"]) > label {
-    flex: 1;
-
     margin: 0;
-
-    color: #3e332a;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    line-height: 1.4;
-
     cursor: pointer;
 }
-
-
-/* =========================================================
-   RADIO / CHECKBOX INPUT
-   ========================================================= */
 
 .form-group input[type="radio"],
 .form-group input[type="checkbox"] {
-    flex: 0 0 auto;
-
     width: 18px;
-
     height: 18px;
-
-    min-width: 18px;
-
-    margin: 0;
-
-    padding: 0;
-
-    accent-color: #9a7046;
-
-    cursor: pointer;
+    accent-color: var(--brand-color);
 }
 
 
 /* =========================================================
-   OPTION HOVER
-   ========================================================= */
-
-.form-group:has(input[type="radio"]):hover,
-.form-group:has(input[type="checkbox"]):hover {
-    background-color: #f5eee5;
-
-    transform: translateX(3px);
-}
-
-
-/* =========================================================
-   OPTION WHEN SELECTED
-   ========================================================= */
-
-.form-group:has(input[type="radio"]:checked),
-.form-group:has(input[type="checkbox"]:checked) {
-    background-color: #f1e7da;
-
-    box-shadow:
-        inset 3px 0 0 #b38a5c;
-}
-
-
-/* =========================================================
-   RADIO / CHECKBOX FOCUS
-   ========================================================= */
-
-.form-group input[type="radio"]:focus,
-.form-group input[type="checkbox"]:focus {
-    outline: 3px solid rgba(179, 138, 92, 0.20);
-
-    outline-offset: 3px;
-}
-
-
-/* =========================================================
-   SEND MESSAGE BUTTON
+   18. COMPONENT - SEND BUTTON
    ========================================================= */
 
 .send-button,
 .contact-card button {
     display: block;
-
     width: 100%;
 
     border: none;
-
     padding: 14px 25px;
-
     margin-top: 8px;
 
-    background-color: #302820;
-
+    background-color: var(--ink-color);
     color: #ffffff;
 
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 15px;
-
     font-weight: bold;
 
     border-radius: 30px;
-
     cursor: pointer;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
 }
 
 .send-button:hover,
 .contact-card button:hover {
-    background-color: #9a7046;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(60, 45, 30, 0.18);
-}
-
-.send-button:active,
-.contact-card button:active {
-    transform: translateY(0);
-}
-
-.send-button:focus,
-.contact-card button:focus {
-    outline: 3px solid rgba(179, 138, 92, 0.30);
-
-    outline-offset: 3px;
+    background-color: var(--brand-color);
 }
 
 
 /* =========================================================
-   SUCCESS MESSAGE
+   19. COMPONENT - SUCCESS MESSAGE
    ========================================================= */
 
 .success-message {
     margin-top: 22px;
-
     padding: 15px 18px;
 
     border-left: 4px solid #7b9a6b;
-
     border-radius: 8px;
 
     background-color: #edf5e9;
-
-    color: #3f6134;
+    color: #3f6134 !important;
 
     font-size: 15px;
-
     font-weight: bold;
-
-    line-height: 1.5;
 }
 
 
 /* =========================================================
-   OTHER CONTACT METHODS
+   20. COMPONENT - OTHER CONTACT
    ========================================================= */
 
 .other-contact {
     margin-top: 45px;
-
     padding-top: 35px;
-
     border-top: 1px solid #e5ddd4;
-}
-
-.other-contact h2 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 30px;
-
-    color: #4b3828;
-
-    margin-bottom: 10px;
-}
-
-.other-contact > p {
-    color: #70675f;
-
-    margin-bottom: 20px;
 }
 
 .contact-list {
@@ -1021,107 +641,77 @@ main {
 }
 
 .contact-list li {
-    color: #665b52;
-
+    color: var(--muted-color);
     margin-bottom: 14px;
-
-    line-height: 1.7;
 }
 
 .contact-list strong {
-    color: #4b3828;
+    color: var(--ink-color);
 }
 
 .contact-list a {
-    color: #9a7046;
-
+    color: var(--brand-color);
     font-weight: bold;
-
     text-decoration: none;
-
-    transition: color 0.3s ease;
-}
-
-.contact-list a:hover {
-    color: #5f4025;
-
-    text-decoration: underline;
 }
 
 
 /* =========================================================
-   PLACE DETAIL PAGE
+   21. PLACE DETAIL PAGE
    ========================================================= */
 
 .place-detail {
     max-width: 1050px;
-
     margin: 0 auto;
-
     padding: 80px 25px 110px;
 }
 
-
-/* =========================================================
-   DETAIL HEADER
-   ========================================================= */
-
 .detail-header {
     max-width: 850px;
-
     margin: 0 auto 55px;
-
     text-align: center;
 }
 
-.detail-label {
-    color: #9a7046;
+.detail-label,
+.detail-section-label {
+    color: var(--brand-color);
 
     font-size: 13px;
-
     font-weight: bold;
-
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
     margin-bottom: 14px;
 }
 
 .detail-header h1 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: clamp(45px, 6vw, 70px);
-
     line-height: 1.05;
 
-    color: #4b3828;
-
+    color: var(--ink-color);
     margin-bottom: 18px;
 }
 
 .detail-intro {
     max-width: 720px;
-
     margin: 0 auto;
 
-    color: #70675f;
-
+    color: var(--muted-color);
     font-size: 18px;
 }
 
 
 /* =========================================================
-   DETAIL IMAGE
+   22. PLACE DETAIL IMAGE
    ========================================================= */
 
 .detail-image {
     width: 100%;
-
     max-width: 1000px;
 
     margin: 0 auto 70px;
 
     overflow: hidden;
-
     border-radius: 16px;
 
     box-shadow:
@@ -1130,20 +720,17 @@ main {
 
 .detail-image img {
     width: 100%;
-
     height: 560px;
-
     object-fit: cover;
 }
 
 
 /* =========================================================
-   DETAIL CONTENT
+   23. PLACE DETAIL CONTENT
    ========================================================= */
 
 .detail-content {
     max-width: 900px;
-
     margin: 0 auto;
 }
 
@@ -1151,52 +738,33 @@ main {
     margin-bottom: 65px;
 }
 
-.detail-section-label {
-    color: #9a7046;
-
-    font-size: 13px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 12px;
-}
-
 .detail-section h2 {
     font-family: Georgia, "Times New Roman", serif;
 
     font-size: 38px;
-
     line-height: 1.15;
 
-    color: #4b3828;
-
+    color: var(--ink-color);
     margin-bottom: 20px;
 }
 
 .detail-section p {
-    color: #665b52;
-
+    color: var(--muted-color);
     font-size: 17px;
-
     line-height: 1.9;
-
     margin-bottom: 18px;
 }
 
 
 /* =========================================================
-   DETAILS TABLE
+   24. DETAILS TABLE
    ========================================================= */
 
 .details-table-wrapper {
     width: 100%;
-
     overflow-x: auto;
 
     background-color: #ffffff;
-
     border-radius: 12px;
 
     box-shadow:
@@ -1205,16 +773,13 @@ main {
 
 .details-table {
     width: 100%;
-
     border-collapse: collapse;
-
     min-width: 600px;
 }
 
 .details-table th,
 .details-table td {
     padding: 18px 22px;
-
     text-align: left;
 
     border-bottom: 1px solid #e5ddd4;
@@ -1224,80 +789,48 @@ main {
     width: 32%;
 
     background-color: #eee5d9;
-
-    color: #4b3828;
+    color: var(--ink-color);
 
     font-size: 14px;
-
     font-weight: bold;
 }
 
 .details-table td {
-    color: #665b52;
-
+    color: var(--muted-color);
     background-color: #ffffff;
-
     font-size: 15px;
 }
 
-.details-table tr:last-child th,
-.details-table tr:last-child td {
-    border-bottom: none;
-}
-
 
 /* =========================================================
-   BACK BUTTON
+   25. BACK BUTTON
    ========================================================= */
 
 .back-button {
-    display: inline-block;
-
     margin-top: 5px;
-
-    padding: 13px 24px;
-
-    background-color: #302820;
-
-    color: #ffffff;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    border-radius: 30px;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
+    background-color: var(--ink-color);
 }
 
 .back-button:hover {
-    background-color: #9a7046;
-
-    transform: translateY(-3px);
+    background-color: var(--brand-color);
 }
 
 
 /* =========================================================
-   FOOTER
+   26. LAYOUT REGION - FOOTER
    ========================================================= */
 
 footer {
-    background-color: #302820;
-
+    background-color: var(--ink-color);
     color: #ffffff;
 
     text-align: center;
-
     padding: 50px 20px;
 }
 
 footer h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 25px;
-
     margin-bottom: 8px;
 }
 
@@ -1307,15 +840,13 @@ footer p {
 
 footer .copyright {
     margin-top: 25px;
-
     font-size: 13px;
-
     color: #a99e92;
 }
 
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   27. RESPONSIVE DESIGN
    ========================================================= */
 
 @media (max-width: 850px) {
@@ -1325,27 +856,13 @@ footer .copyright {
         padding: 20px;
     }
 
-    .about-section {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-    }
-
-    .about-image {
-        max-width: 400px;
-
-        margin: auto;
-    }
-
     .about-page {
         grid-template-columns: 1fr;
-
         gap: 45px;
     }
 
     .about-page-image {
         max-width: 400px;
-
         margin: auto;
     }
 
@@ -1355,18 +872,12 @@ footer .copyright {
 
     .place-card {
         max-width: 600px;
-
         width: 100%;
-
         margin: 0 auto;
     }
 
     .trust-grid {
         grid-template-columns: 1fr;
-    }
-
-    .place-detail {
-        padding-top: 65px;
     }
 
     .detail-image img {
@@ -1376,7 +887,7 @@ footer .copyright {
 
 
 /* =========================================================
-   TABLET / MOBILE
+   28. MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
@@ -1384,14 +895,13 @@ footer .copyright {
     .top-navigation,
     .nav-container {
         flex-direction: column;
-
         gap: 18px;
-
         text-align: center;
     }
 
-    nav ul {
-        gap: 20px;
+    nav li {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     main {
@@ -1410,10 +920,6 @@ footer .copyright {
         font-size: 16px;
     }
 
-    .about-content h2 {
-        font-size: 38px;
-    }
-
     .about-page-content h1 {
         font-size: 42px;
     }
@@ -1423,83 +929,13 @@ footer .copyright {
         font-size: 38px;
     }
 
-
-    /* =====================================================
-       CONTACT FORM MOBILE
-       ===================================================== */
-
     .contact-card {
         padding: 30px 22px;
-
         border-radius: 14px;
     }
 
     .contact-card fieldset {
         padding: 22px 18px;
-
-        border-radius: 12px;
-    }
-
-    .contact-card legend {
-        font-size: 17px;
-    }
-
-    .form-group input:not([type="radio"]):not([type="checkbox"]),
-    .form-group select,
-    .form-group textarea {
-        font-size: 16px;
-    }
-
-
-    /* =====================================================
-       RADIO / CHECKBOX MOBILE
-       ===================================================== */
-
-    .form-group:has(input[type="radio"]),
-    .form-group:has(input[type="checkbox"]) {
-        min-height: 52px;
-
-        padding: 12px 10px;
-
-        gap: 15px;
-    }
-
-    .form-group:has(input[type="radio"]) > label,
-    .form-group:has(input[type="checkbox"]) > label {
-        font-size: 15px;
-    }
-
-    .form-group input[type="radio"],
-    .form-group input[type="checkbox"] {
-        width: 18px;
-
-        height: 18px;
-
-        min-width: 18px;
-    }
-
-
-    .other-contact {
-        margin-top: 35px;
-
-        padding-top: 30px;
-    }
-
-    .other-contact h2 {
-        font-size: 27px;
-    }
-
-
-    /* =====================================================
-       DETAIL PAGE
-       ===================================================== */
-
-    .place-detail {
-        padding: 55px 18px 80px;
-    }
-
-    .detail-header {
-        margin-bottom: 40px;
     }
 
     .detail-header h1 {
@@ -1512,16 +948,11 @@ footer .copyright {
 
     .detail-image {
         margin-bottom: 50px;
-
         border-radius: 12px;
     }
 
     .detail-image img {
         height: 330px;
-    }
-
-    .detail-section {
-        margin-bottom: 50px;
     }
 
     .detail-section h2 {
@@ -1531,16 +962,11 @@ footer .copyright {
     .detail-section p {
         font-size: 16px;
     }
-
-    .details-table th,
-    .details-table td {
-        padding: 15px;
-    }
 }
 
 
 /* =========================================================
-   SMALL PHONES
+   29. SMALL PHONES
    ========================================================= */
 
 @media (max-width: 420px) {
@@ -1549,8 +975,9 @@ footer .copyright {
         font-size: 18px;
     }
 
-    nav ul {
-        gap: 14px;
+    nav li {
+        margin-left: 6px;
+        margin-right: 6px;
     }
 
     nav a {
@@ -1571,14 +998,5 @@ footer .copyright {
 
     .contact-card {
         padding: 25px 17px;
-    }
-
-    .contact-card fieldset {
-        padding: 20px 15px;
-    }
-
-    .form-group:has(input[type="radio"]),
-    .form-group:has(input[type="checkbox"]) {
-        padding: 11px 8px;
     }
 }
