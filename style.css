@@ -65,7 +65,6 @@ img {
     z-index: 100;
 }
 
-
 /*
    The header has exactly two direct children:
    1. h1.site-title
@@ -114,12 +113,6 @@ img {
     margin: 0;
 }
 
-
-/*
-   No display:inline-block here.
-   Flexbox controls the navigation items.
-*/
-
 .site-header nav li {
     list-style: none;
     margin: 0;
@@ -149,11 +142,6 @@ img {
 /* =========================================================
    5. HERO - CENTERING WITH FLEXBOX
    ========================================================= */
-
-/*
-   The hero is centered both horizontally and vertically.
-   min-height gives flexbox enough height for vertical centering.
-*/
 
 .hero {
     min-height: 85vh;
@@ -298,22 +286,34 @@ main {
 
 
 /* =========================================================
-   9. PLACE CARDS
+   9. PLACE CARDS - FLEXBOX
    ========================================================= */
+
+/*
+   6.4 REQUIREMENT:
+   The place cards are arranged using Flexbox.
+
+   flex-wrap allows the cards to move to the next row
+   when there is not enough horizontal space.
+
+   gap provides consistent spacing between cards.
+
+   No media query is needed for this responsive layout.
+*/
 
 .places-section {
     padding-top: 20px;
 }
 
 .places-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
 .place-card {
+    flex: 1 1 240px;
+
     background-color: #ffffff;
 
     border-radius: 12px;
@@ -321,8 +321,6 @@ main {
     padding: 16px;
 
     border-left: 6px solid var(--brand-color);
-
-    margin-bottom: 20px;
 
     overflow: hidden;
 
@@ -332,6 +330,13 @@ main {
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
+
+    /*
+       No margin-bottom here.
+       The gap on .places-grid controls the spacing.
+       align-items: stretch is the default, so cards
+       in the same row have equal heights.
+    */
 }
 
 .place-card:hover {
@@ -636,7 +641,9 @@ main {
 }
 
 
-/* INPUTS AND TEXTAREA */
+/* =========================================================
+   15. INPUTS AND TEXTAREA
+   ========================================================= */
 
 .form-group input:not([type="radio"]):not([type="checkbox"]),
 .form-group select,
@@ -668,9 +675,6 @@ main {
     resize: vertical;
 }
 
-
-/* FOCUS STATE */
-
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -683,7 +687,7 @@ main {
 
 
 /* =========================================================
-   15. RADIO AND CHECKBOX
+   16. RADIO AND CHECKBOX
    ========================================================= */
 
 .form-group:has(input[type="radio"]),
@@ -718,7 +722,7 @@ main {
 
 
 /* =========================================================
-   16. SEND BUTTON
+   17. SEND BUTTON
    ========================================================= */
 
 .send-button,
@@ -763,7 +767,7 @@ main {
 
 
 /* =========================================================
-   17. SUCCESS MESSAGE
+   18. SUCCESS MESSAGE
    ========================================================= */
 
 .success-message {
@@ -786,7 +790,7 @@ main {
 
 
 /* =========================================================
-   18. OTHER CONTACT
+   19. OTHER CONTACT
    ========================================================= */
 
 .other-contact {
@@ -823,7 +827,7 @@ main {
 
 
 /* =========================================================
-   19. PLACE DETAIL PAGE
+   20. PLACE DETAIL PAGE
    ========================================================= */
 
 .place-detail {
@@ -878,7 +882,7 @@ main {
 
 
 /* =========================================================
-   20. PLACE DETAIL IMAGE
+   21. PLACE DETAIL IMAGE
    ========================================================= */
 
 .detail-image {
@@ -906,7 +910,7 @@ main {
 
 
 /* =========================================================
-   21. PLACE DETAIL CONTENT
+   22. PLACE DETAIL CONTENT
    ========================================================= */
 
 .detail-content {
@@ -943,7 +947,7 @@ main {
 
 
 /* =========================================================
-   22. DETAILS TABLE
+   23. DETAILS TABLE
    ========================================================= */
 
 .details-table-wrapper {
@@ -998,7 +1002,7 @@ main {
 
 
 /* =========================================================
-   23. BACK BUTTON
+   24. BACK BUTTON
    ========================================================= */
 
 .back-button {
@@ -1013,7 +1017,7 @@ main {
 
 
 /* =========================================================
-   24. FOOTER
+   25. FOOTER
    ========================================================= */
 
 footer {
@@ -1048,8 +1052,14 @@ footer .copyright {
 
 
 /* =========================================================
-   25. RESPONSIVE DESIGN
+   26. OTHER RESPONSIVE PAGE ELEMENTS
    ========================================================= */
+
+/*
+   These rules are only for other page sections.
+   The Places cards themselves are already responsive
+   through Flexbox using flex-wrap and flex-basis.
+*/
 
 @media (max-width: 850px) {
 
@@ -1057,209 +1067,141 @@ footer .copyright {
         padding: 20px;
     }
 
-
     .about-page {
         grid-template-columns: 1fr;
-
         gap: 45px;
     }
 
-
     .about-page-image {
         max-width: 400px;
-
         margin: auto;
     }
-
-
-    .places-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .place-card {
-        max-width: 600px;
-
-        width: 100%;
-
-        margin: 0 auto 20px;
-    }
-
 
     .trust-grid {
         grid-template-columns: 1fr;
     }
 
-
     .detail-image img {
         height: 450px;
     }
-
 }
 
 
-/* =========================================================
-   26. MOBILE
-   ========================================================= */
-
 @media (max-width: 600px) {
-
-    /*
-       Header stays in a row.
-       This keeps the logo on the left
-       and navigation on the right.
-    */
 
     .site-header {
         min-height: 70px;
-
         padding: 16px 18px;
-
         gap: 12px;
     }
-
 
     .site-logo {
         font-size: 17px;
     }
 
-
     .site-header nav ul {
         gap: 12px;
     }
 
-
     .site-header nav a {
         font-size: 13px;
-
         padding: 5px 2px;
     }
-
 
     main {
         padding: 60px 18px;
     }
 
-
     .hero {
         min-height: 75vh;
-
         padding: 50px 18px;
     }
-
 
     .hero h2 {
         font-size: 42px;
     }
 
-
     .tagline {
         font-size: 16px;
     }
 
-
     .about-page-content h1 {
         font-size: 42px;
     }
-
 
     .section-heading h1,
     .section-heading h2 {
         font-size: 38px;
     }
 
-
     .contact-card {
         padding: 30px 22px;
-
         border-radius: 14px;
     }
-
 
     .contact-card fieldset {
         padding: 22px 18px;
     }
 
-
     .detail-header h1 {
         font-size: 42px;
     }
-
 
     .detail-intro {
         font-size: 16px;
     }
 
-
     .detail-image {
         margin-bottom: 50px;
-
         border-radius: 12px;
     }
-
 
     .detail-image img {
         height: 330px;
     }
 
-
     .detail-section h2 {
         font-size: 32px;
     }
 
-
     .detail-section p {
         font-size: 16px;
     }
-
 }
 
-
-/* =========================================================
-   27. SMALL PHONES
-   ========================================================= */
 
 @media (max-width: 420px) {
 
     .site-header {
         padding: 14px 12px;
-
         gap: 8px;
     }
-
 
     .site-logo {
         font-size: 15px;
     }
 
-
     .site-header nav ul {
         gap: 8px;
     }
-
 
     .site-header nav a {
         font-size: 12px;
     }
 
-
     .hero h2 {
         font-size: 36px;
     }
-
 
     .detail-header h1 {
         font-size: 36px;
     }
 
-
     .detail-image img {
         height: 280px;
     }
 
-
     .contact-card {
         padding: 25px 17px;
     }
-
 }
