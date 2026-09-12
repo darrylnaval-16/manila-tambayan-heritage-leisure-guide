@@ -13,23 +13,37 @@
 <body>
 
     <!-- HEADER -->
-    <header class="page-header">
+    <header class="site-header">
 
-        <div class="nav-container">
-
+        <h1 class="site-title">
             <a href="index.html" class="site-logo">
                 Manila Heritage & Leisure
             </a>
+        </h1>
 
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <nav aria-label="Main navigation">
 
-        </div>
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" aria-current="page">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
 
     </header>
 
@@ -172,7 +186,10 @@
 
 
                         <!-- SEND BUTTON -->
-                        <button type="submit" class="send-button">
+                        <button
+                            type="submit"
+                            class="send-button"
+                        >
                             Send Message
                         </button>
 
@@ -254,9 +271,11 @@
     <!-- FORM SUCCESS SCRIPT -->
     <script>
 
-        const contactForm = document.getElementById("contact-form");
+        const contactForm =
+            document.getElementById("contact-form");
 
-        const successMessage = document.getElementById("success-message");
+        const successMessage =
+            document.getElementById("success-message");
 
 
         contactForm.addEventListener("submit", function(event) {

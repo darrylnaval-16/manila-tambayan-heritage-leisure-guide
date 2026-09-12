@@ -38,12 +38,126 @@ img {
 
 
 /* =========================================================
-   3. LAYOUT REGIONS - HEADER
+   3. HEADER - FLEXBOX
    ========================================================= */
+
+.site-header {
+    width: 100%;
+    min-height: 82px;
+    padding: 20px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--ink-color),
+            #59483a
+        );
+
+    color: #ffffff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+
+    position: relative;
+    z-index: 100;
+}
+
+
+/*
+   The header has exactly two direct children:
+   1. h1.site-title
+   2. nav
+*/
+
+.site-title {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.site-logo {
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.site-logo:hover {
+    color: var(--brand-color);
+}
+
+
+/* =========================================================
+   4. NAVIGATION - FLEXBOX
+   ========================================================= */
+
+.site-header nav {
+    flex: 0 0 auto;
+}
+
+.site-header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 20px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*
+   No display:inline-block here.
+   Flexbox controls the navigation items.
+*/
+
+.site-header nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    padding: 7px 3px;
+}
+
+.site-header nav a:hover {
+    color: var(--brand-color);
+}
+
+.site-header nav a[aria-current="page"] {
+    color: var(--brand-color);
+}
+
+
+/* =========================================================
+   5. HERO - CENTERING WITH FLEXBOX
+   ========================================================= */
+
+/*
+   The hero is centered both horizontally and vertically.
+   min-height gives flexbox enough height for vertical centering.
+*/
 
 .hero {
     min-height: 85vh;
-    padding: 0 20px;
+    padding: 60px 20px;
 
     background:
         linear-gradient(
@@ -56,123 +170,51 @@ img {
     background-position: center;
 
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     text-align: center;
     color: #ffffff;
 }
 
-.page-header {
-    background:
-        linear-gradient(
-            135deg,
-            var(--ink-color),
-            #59483a
-        );
-
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   4. LAYOUT REGIONS - NAVIGATION
-   ========================================================= */
-
-.top-navigation,
-.nav-container {
-    width: 100%;
-    max-width: 1150px;
-    margin: 0 auto;
-    padding: 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    position: relative;
-    z-index: 10;
-}
-
-.site-logo {
-    color: #ffffff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-}
-
-.site-logo:hover {
-    color: var(--brand-color);
-}
-
-
-/* =========================================================
-   5. NAVIGATION BAR
-   ========================================================= */
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav li {
-    display: inline-block;
-    list-style: none;
-    margin-left: 25px;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    padding: 7px 3px;
-}
-
-nav a:hover {
-    color: var(--brand-color);
-}
-
-
-/* =========================================================
-   6. HERO CONTENT
-   ========================================================= */
-
 .hero-content {
     max-width: 850px;
     width: 100%;
-    margin: auto;
-    padding: 60px 20px 90px;
+
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .eyebrow {
     font-size: 13px;
     letter-spacing: 4px;
     margin-bottom: 20px;
+
     color: var(--brand-color);
     font-weight: bold;
 }
 
-.hero h1 {
+.hero h2 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: clamp(45px, 7vw, 82px);
     line-height: 1.05;
+
     margin-bottom: 25px;
 }
 
 .tagline {
     max-width: 650px;
+
     margin: 0 auto 35px;
+
     font-size: 18px;
     color: #f1e9dc;
 }
 
 
 /* =========================================================
-   7. COMPONENT - BUTTONS
+   6. BUTTONS
    ========================================================= */
 
 .explore-button,
@@ -188,6 +230,10 @@ nav a:hover {
     font-weight: bold;
 
     border-radius: 30px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .explore-button:hover,
@@ -198,40 +244,50 @@ nav a:hover {
 
 
 /* =========================================================
-   8. LAYOUT REGIONS - MAIN
+   7. MAIN CONTENT
    ========================================================= */
 
 main {
     max-width: 1150px;
+
     margin: 0 auto;
+
     padding: 90px 25px;
 }
 
 
 /* =========================================================
-   9. COMPONENT - SECTION HEADINGS
+   8. SECTION HEADINGS
    ========================================================= */
 
 .section-heading {
     text-align: center;
+
     max-width: 700px;
+
     margin: 0 auto 55px;
 }
 
 .section-label {
     color: var(--brand-color);
+
     font-size: 13px;
     font-weight: bold;
+
     letter-spacing: 3px;
+
     margin-bottom: 10px;
 }
 
 .section-heading h1,
 .section-heading h2 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 48px;
     line-height: 1.15;
+
     color: var(--ink-color);
+
     margin-bottom: 15px;
 }
 
@@ -242,7 +298,7 @@ main {
 
 
 /* =========================================================
-   11. COMPONENT - PLACE CARDS
+   9. PLACE CARDS
    ========================================================= */
 
 .places-section {
@@ -251,27 +307,31 @@ main {
 
 .places-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 28px;
 }
 
 .place-card {
     background-color: #ffffff;
+
     border-radius: 12px;
 
-    /* REQUIRED: at least 16px padding */
     padding: 16px;
 
-    /* REQUIRED: colored left border using brand variable */
     border-left: 6px solid var(--brand-color);
 
-    /* REQUIRED: margin-bottom */
     margin-bottom: 20px;
 
     overflow: hidden;
 
     box-shadow:
         0 10px 30px rgba(60, 45, 30, 0.10);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .place-card:hover {
@@ -283,13 +343,16 @@ main {
 
 .card-image {
     height: 260px;
+
     overflow: hidden;
+
     border-radius: 8px;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
 }
 
@@ -299,16 +362,18 @@ main {
 
 .place-number {
     color: var(--brand-color);
+
     font-size: 13px;
     font-weight: bold;
+
     letter-spacing: 2px;
 }
 
 .card-content h3 {
     font-family: Georgia, "Times New Roman", serif;
 
-    /* REQUIRED: distinct font-size and color */
     font-size: 29px;
+
     color: var(--ink-color);
 
     margin: 8px 0 12px;
@@ -316,22 +381,26 @@ main {
 
 .card-content p {
     color: var(--muted-color);
+
     font-size: 15px;
+
     margin-bottom: 12px;
 }
 
 .card-content p:first-of-type {
     color: var(--brand-color);
+
     font-weight: bold;
 }
 
 
 /* =========================================================
-   12. COMPONENT - READ MORE
+   10. READ MORE
    ========================================================= */
 
 .read-more {
     display: inline-block;
+
     margin-top: 8px;
 
     color: var(--brand-color);
@@ -352,21 +421,27 @@ main {
 
 
 /* =========================================================
-   13. COMPONENT - ABOUT PAGE
+   11. ABOUT PAGE
    ========================================================= */
 
 .about-page {
     display: grid;
+
     grid-template-columns: 350px 1fr;
+
     gap: 70px;
+
     align-items: center;
+
     margin-bottom: 100px;
 }
 
 .about-page-image img {
     width: 100%;
     height: 390px;
+
     object-fit: cover;
+
     border-radius: 12px;
 
     box-shadow:
@@ -375,27 +450,34 @@ main {
 
 .about-page-content h1 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 55px;
     line-height: 1.1;
+
     color: var(--ink-color);
+
     margin-bottom: 8px;
 }
 
 .about-page-content h2 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 30px;
+
     color: var(--brand-color);
+
     margin-bottom: 22px;
 }
 
 .about-page-content p:not(.section-label) {
     color: var(--muted-color);
+
     margin-bottom: 17px;
 }
 
 
 /* =========================================================
-   14. COMPONENT - TRUST CARDS
+   12. TRUST CARDS
    ========================================================= */
 
 .about-details {
@@ -404,17 +486,23 @@ main {
 
 .trust-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 28px;
 }
 
 .info-card {
     background-color: #ffffff;
+
     padding: 30px;
+
     border-radius: 10px;
 
     box-shadow:
         0 10px 30px rgba(60, 45, 30, 0.10);
+
+    transition: transform 0.2s ease;
 }
 
 .info-card:hover {
@@ -423,40 +511,49 @@ main {
 
 .info-number {
     color: var(--brand-color);
+
     font-size: 13px;
     font-weight: bold;
+
     letter-spacing: 2px;
 }
 
 .info-card h3 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 25px;
+
     color: var(--ink-color);
+
     margin: 8px 0 12px;
 }
 
 .info-card p {
     color: var(--muted-color);
+
     font-size: 15px;
 }
 
 
 /* =========================================================
-   15. COMPONENT - CONTACT PAGE
+   13. CONTACT PAGE
    ========================================================= */
 
 .contact-page {
     min-height: 60vh;
+
     padding-top: 10px;
 }
 
 .contact-card {
     max-width: 780px;
+
     margin: 0 auto;
 
     padding: 45px;
 
     background-color: #ffffff;
+
     border-radius: 18px;
 
     border-top: 5px solid var(--brand-color);
@@ -467,8 +564,21 @@ main {
 
 .contact-card h2 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 34px;
+
     color: var(--ink-color);
+
+    margin-bottom: 12px;
+}
+
+.contact-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+
+    color: var(--ink-color);
+
     margin-bottom: 12px;
 }
 
@@ -478,19 +588,20 @@ main {
 
 
 /* =========================================================
-   16. COMPONENT - FORM
+   14. FORM
    ========================================================= */
 
 .contact-card form {
     width: 100%;
+
     margin-top: 30px;
 }
 
 .contact-card fieldset {
     border: 1px solid #dfd2c3;
 
-    /* REQUIRED: padding and border-radius */
     border-radius: 14px;
+
     padding: 30px;
 
     margin: 0 0 22px;
@@ -501,10 +612,10 @@ main {
 .contact-card legend {
     padding: 0 12px;
 
-    /* REQUIRED: brand colour */
     color: var(--brand-color);
 
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 18px;
     font-weight: bold;
 }
@@ -515,12 +626,15 @@ main {
 
 .form-group > label {
     display: block;
+
     margin-bottom: 8px;
 
     color: var(--ink-color);
+
     font-size: 15px;
     font-weight: bold;
 }
+
 
 /* INPUTS AND TEXTAREA */
 
@@ -528,29 +642,34 @@ main {
 .form-group select,
 .form-group textarea {
     display: block;
+
     width: 100%;
 
-    /* REQUIRED: consistent padding */
     padding: 13px 15px;
 
     border: 1px solid #d8cabc;
+
     border-radius: 9px;
 
     background-color: #ffffff;
+
     color: var(--ink-color);
 
     font-family: Arial, Helvetica, sans-serif;
+
     font-size: 15px;
+
     line-height: 1.5;
 }
 
 .form-group textarea {
     min-height: 160px;
+
     resize: vertical;
 }
 
 
-/* REQUIRED: VISIBLE FOCUS STATE */
+/* FOCUS STATE */
 
 .form-group input:focus,
 .form-group select:focus,
@@ -558,28 +677,34 @@ main {
     border-color: var(--brand-color);
 
     outline: 3px solid var(--brand-color);
+
     outline-offset: 2px;
 }
 
 
 /* =========================================================
-   17. COMPONENT - RADIO AND CHECKBOX
+   15. RADIO AND CHECKBOX
    ========================================================= */
 
 .form-group:has(input[type="radio"]),
 .form-group:has(input[type="checkbox"]) {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
     min-height: 45px;
+
     margin-bottom: 12px;
+
     padding: 10px 12px;
 }
 
 .form-group:has(input[type="radio"]) > label,
 .form-group:has(input[type="checkbox"]) > label {
     margin: 0;
+
     cursor: pointer;
 }
 
@@ -593,30 +718,35 @@ main {
 
 
 /* =========================================================
-   18. COMPONENT - SEND BUTTON
+   16. SEND BUTTON
    ========================================================= */
 
 .send-button,
 .contact-card button {
     display: block;
+
     width: 100%;
 
-    /* REQUIRED: styled button */
     background-color: var(--brand-color);
+
     color: #ffffff;
 
     padding: 14px 25px;
 
     border: none;
+
     border-radius: 30px;
 
     margin-top: 8px;
 
     font-family: Arial, Helvetica, sans-serif;
+
     font-size: 15px;
     font-weight: bold;
 
     cursor: pointer;
+
+    transition: background-color 0.2s ease;
 }
 
 .send-button:hover,
@@ -624,51 +754,58 @@ main {
     background-color: var(--ink-color);
 }
 
-
-/* BUTTON FOCUS */
-
 .send-button:focus,
 .contact-card button:focus {
     outline: 3px solid var(--brand-color);
+
     outline-offset: 3px;
 }
 
 
 /* =========================================================
-   19. COMPONENT - SUCCESS MESSAGE
+   17. SUCCESS MESSAGE
    ========================================================= */
 
 .success-message {
     margin-top: 22px;
+
     padding: 15px 18px;
 
     border-left: 4px solid #7b9a6b;
+
     border-radius: 8px;
 
     background-color: #edf5e9;
+
     color: #3f6134 !important;
 
     font-size: 15px;
+
     font-weight: bold;
 }
 
 
 /* =========================================================
-   20. COMPONENT - OTHER CONTACT
+   18. OTHER CONTACT
    ========================================================= */
 
 .other-contact {
     margin-top: 45px;
+
     padding-top: 35px;
+
     border-top: 1px solid #e5ddd4;
 }
 
 .contact-list {
     padding-left: 25px;
+
+    margin-top: 15px;
 }
 
 .contact-list li {
     color: var(--muted-color);
+
     margin-bottom: 14px;
 }
 
@@ -678,24 +815,30 @@ main {
 
 .contact-list a {
     color: var(--brand-color);
+
     font-weight: bold;
+
     text-decoration: none;
 }
 
 
 /* =========================================================
-   21. PLACE DETAIL PAGE
+   19. PLACE DETAIL PAGE
    ========================================================= */
 
 .place-detail {
     max-width: 1050px;
+
     margin: 0 auto;
+
     padding: 80px 25px 110px;
 }
 
 .detail-header {
     max-width: 850px;
+
     margin: 0 auto 55px;
+
     text-align: center;
 }
 
@@ -705,6 +848,7 @@ main {
 
     font-size: 13px;
     font-weight: bold;
+
     letter-spacing: 3px;
 
     margin-bottom: 14px;
@@ -712,33 +856,40 @@ main {
 
 .detail-header h1 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: clamp(45px, 6vw, 70px);
+
     line-height: 1.05;
 
     color: var(--ink-color);
+
     margin-bottom: 18px;
 }
 
 .detail-intro {
     max-width: 720px;
+
     margin: 0 auto;
 
     color: var(--muted-color);
+
     font-size: 18px;
 }
 
 
 /* =========================================================
-   22. PLACE DETAIL IMAGE
+   20. PLACE DETAIL IMAGE
    ========================================================= */
 
 .detail-image {
     width: 100%;
+
     max-width: 1000px;
 
     margin: 0 auto 70px;
 
     overflow: hidden;
+
     border-radius: 16px;
 
     box-shadow:
@@ -747,17 +898,20 @@ main {
 
 .detail-image img {
     width: 100%;
+
     height: 560px;
+
     object-fit: cover;
 }
 
 
 /* =========================================================
-   23. PLACE DETAIL CONTENT
+   21. PLACE DETAIL CONTENT
    ========================================================= */
 
 .detail-content {
     max-width: 900px;
+
     margin: 0 auto;
 }
 
@@ -769,29 +923,36 @@ main {
     font-family: Georgia, "Times New Roman", serif;
 
     font-size: 38px;
+
     line-height: 1.15;
 
     color: var(--ink-color);
+
     margin-bottom: 20px;
 }
 
 .detail-section p {
     color: var(--muted-color);
+
     font-size: 17px;
+
     line-height: 1.9;
+
     margin-bottom: 18px;
 }
 
 
 /* =========================================================
-   24. DETAILS TABLE
+   22. DETAILS TABLE
    ========================================================= */
 
 .details-table-wrapper {
     width: 100%;
+
     overflow-x: auto;
 
     background-color: #ffffff;
+
     border-radius: 12px;
 
     box-shadow:
@@ -800,13 +961,16 @@ main {
 
 .details-table {
     width: 100%;
+
     border-collapse: collapse;
+
     min-width: 600px;
 }
 
 .details-table th,
 .details-table td {
     padding: 18px 22px;
+
     text-align: left;
 
     border-bottom: 1px solid #e5ddd4;
@@ -816,25 +980,30 @@ main {
     width: 32%;
 
     background-color: #eee5d9;
+
     color: var(--ink-color);
 
     font-size: 14px;
+
     font-weight: bold;
 }
 
 .details-table td {
     color: var(--muted-color);
+
     background-color: #ffffff;
+
     font-size: 15px;
 }
 
 
 /* =========================================================
-   25. BACK BUTTON
+   23. BACK BUTTON
    ========================================================= */
 
 .back-button {
     margin-top: 5px;
+
     background-color: var(--ink-color);
 }
 
@@ -844,20 +1013,24 @@ main {
 
 
 /* =========================================================
-   26. LAYOUT REGION - FOOTER
+   24. FOOTER
    ========================================================= */
 
 footer {
     background-color: var(--ink-color);
+
     color: #ffffff;
 
     text-align: center;
+
     padding: 50px 20px;
 }
 
 footer h2 {
     font-family: Georgia, "Times New Roman", serif;
+
     font-size: 25px;
+
     margin-bottom: 8px;
 }
 
@@ -867,163 +1040,226 @@ footer p {
 
 footer .copyright {
     margin-top: 25px;
+
     font-size: 13px;
+
     color: #a99e92;
 }
 
 
 /* =========================================================
-   27. RESPONSIVE DESIGN
+   25. RESPONSIVE DESIGN
    ========================================================= */
 
 @media (max-width: 850px) {
 
-    .top-navigation,
-    .nav-container {
+    .site-header {
         padding: 20px;
     }
 
+
     .about-page {
         grid-template-columns: 1fr;
+
         gap: 45px;
     }
 
+
     .about-page-image {
         max-width: 400px;
+
         margin: auto;
     }
+
 
     .places-grid {
         grid-template-columns: 1fr;
     }
 
+
     .place-card {
         max-width: 600px;
+
         width: 100%;
-        margin: 0 auto;
+
+        margin: 0 auto 20px;
     }
+
 
     .trust-grid {
         grid-template-columns: 1fr;
     }
 
+
     .detail-image img {
         height: 450px;
     }
+
 }
 
 
 /* =========================================================
-   28. MOBILE
+   26. MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
 
-    .top-navigation,
-    .nav-container {
-        flex-direction: column;
-        gap: 18px;
-        text-align: center;
+    /*
+       Header stays in a row.
+       This keeps the logo on the left
+       and navigation on the right.
+    */
+
+    .site-header {
+        min-height: 70px;
+
+        padding: 16px 18px;
+
+        gap: 12px;
     }
 
-    nav li {
-        margin-left: 10px;
-        margin-right: 10px;
+
+    .site-logo {
+        font-size: 17px;
     }
+
+
+    .site-header nav ul {
+        gap: 12px;
+    }
+
+
+    .site-header nav a {
+        font-size: 13px;
+
+        padding: 5px 2px;
+    }
+
 
     main {
         padding: 60px 18px;
     }
 
+
     .hero {
         min-height: 75vh;
+
+        padding: 50px 18px;
     }
 
-    .hero h1 {
+
+    .hero h2 {
         font-size: 42px;
     }
+
 
     .tagline {
         font-size: 16px;
     }
 
+
     .about-page-content h1 {
         font-size: 42px;
     }
+
 
     .section-heading h1,
     .section-heading h2 {
         font-size: 38px;
     }
 
+
     .contact-card {
         padding: 30px 22px;
+
         border-radius: 14px;
     }
+
 
     .contact-card fieldset {
         padding: 22px 18px;
     }
 
+
     .detail-header h1 {
         font-size: 42px;
     }
+
 
     .detail-intro {
         font-size: 16px;
     }
 
+
     .detail-image {
         margin-bottom: 50px;
+
         border-radius: 12px;
     }
+
 
     .detail-image img {
         height: 330px;
     }
 
+
     .detail-section h2 {
         font-size: 32px;
     }
 
+
     .detail-section p {
         font-size: 16px;
     }
+
 }
 
 
 /* =========================================================
-   29. SMALL PHONES
+   27. SMALL PHONES
    ========================================================= */
 
 @media (max-width: 420px) {
 
+    .site-header {
+        padding: 14px 12px;
+
+        gap: 8px;
+    }
+
+
     .site-logo {
-        font-size: 18px;
+        font-size: 15px;
     }
 
-    nav li {
-        margin-left: 6px;
-        margin-right: 6px;
+
+    .site-header nav ul {
+        gap: 8px;
     }
 
-    nav a {
-        font-size: 14px;
+
+    .site-header nav a {
+        font-size: 12px;
     }
 
-    .hero h1 {
+
+    .hero h2 {
         font-size: 36px;
     }
+
 
     .detail-header h1 {
         font-size: 36px;
     }
 
+
     .detail-image img {
         height: 280px;
     }
 
+
     .contact-card {
         padding: 25px 17px;
     }
+
 }
