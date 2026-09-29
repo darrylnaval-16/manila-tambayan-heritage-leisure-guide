@@ -38,114 +38,53 @@ img {
 
 
 /* =========================================================
-   3. HEADER - FLEXBOX
+   3. PAGE GRID LAYOUT - 7.3
    ========================================================= */
 
-.site-header {
-    width: 100%;
-    min-height: 82px;
-    padding: 20px 25px;
+.page {
+    display: grid;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--ink-color),
-            #59483a
-        );
+    grid-template-columns: 220px 1fr;
 
-    color: #ffffff;
+    grid-template-areas:
+        "masthead masthead"
+        "side main"
+        "foot foot";
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 16px;
 
-    gap: 25px;
-
-    position: relative;
-    z-index: 100;
-}
-
-/*
-   The header has exactly two direct children:
-   1. h1.site-title
-   2. nav
-*/
-
-.site-title {
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-.site-logo {
-    color: #ffffff;
-
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    font-weight: bold;
-
-    text-decoration: none;
-    letter-spacing: 0.5px;
-}
-
-.site-logo:hover {
-    color: var(--brand-color);
+    min-height: 100vh;
 }
 
 
 /* =========================================================
-   4. NAVIGATION - FLEXBOX
+   4. GRID AREA ASSIGNMENTS - 7.3
    ========================================================= */
 
-.site-header nav {
-    flex: 0 0 auto;
+header {
+    grid-area: masthead;
 }
 
-.site-header nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: 20px;
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
+aside {
+    grid-area: side;
 }
 
-.site-header nav li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+main {
+    grid-area: main;
 }
 
-.site-header nav a {
-    color: #ffffff;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    padding: 7px 3px;
-}
-
-.site-header nav a:hover {
-    color: var(--brand-color);
-}
-
-.site-header nav a[aria-current="page"] {
-    color: var(--brand-color);
+footer {
+    grid-area: foot;
 }
 
 
 /* =========================================================
-   5. HERO - CENTERING WITH FLEXBOX
+   5. LAYOUT REGIONS - HEADER
    ========================================================= */
 
 .hero {
     min-height: 85vh;
-    padding: 60px 20px;
+    padding: 0 20px;
 
     background:
         linear-gradient(
@@ -158,51 +97,171 @@ img {
     background-position: center;
 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 
     text-align: center;
     color: #ffffff;
 }
 
+.page-header {
+    background:
+        linear-gradient(
+            135deg,
+            var(--ink-color),
+            #59483a
+        );
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   6. NAVIGATION
+   ========================================================= */
+
+.top-navigation,
+.nav-container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    z-index: 10;
+}
+
+.site-logo {
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.site-logo:hover {
+    color: var(--brand-color);
+}
+
+
+/* =========================================================
+   7. NAVIGATION BAR
+   ========================================================= */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    list-style: none;
+    margin-left: 25px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    padding: 7px 3px;
+}
+
+nav a:hover {
+    color: var(--brand-color);
+}
+
+
+/* =========================================================
+   8. SIDEBAR
+   ========================================================= */
+
+.guide-sidebar {
+    background-color: #ffffff;
+
+    padding: 24px;
+
+    border-left: 6px solid var(--brand-color);
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(60, 45, 30, 0.10);
+
+    align-self: start;
+}
+
+.guide-sidebar h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    color: var(--ink-color);
+    margin-bottom: 12px;
+}
+
+.guide-sidebar h3 {
+    color: var(--brand-color);
+    font-size: 16px;
+
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.guide-sidebar p {
+    color: var(--muted-color);
+    font-size: 14px;
+}
+
+.guide-sidebar ul {
+    padding-left: 20px;
+}
+
+.guide-sidebar li {
+    color: var(--muted-color);
+    margin-bottom: 6px;
+}
+
+
+/* =========================================================
+   9. HERO CONTENT
+   ========================================================= */
+
 .hero-content {
     max-width: 850px;
     width: 100%;
-
-    margin: 0 auto;
-    padding: 20px;
+    margin: auto;
+    padding: 60px 20px 90px;
 }
 
 .eyebrow {
     font-size: 13px;
     letter-spacing: 4px;
     margin-bottom: 20px;
-
     color: var(--brand-color);
     font-weight: bold;
 }
 
-.hero h2 {
+.hero h1 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: clamp(45px, 7vw, 82px);
     line-height: 1.05;
-
     margin-bottom: 25px;
 }
 
 .tagline {
     max-width: 650px;
-
     margin: 0 auto 35px;
-
     font-size: 18px;
     color: #f1e9dc;
 }
 
 
 /* =========================================================
-   6. BUTTONS
+   10. BUTTONS
    ========================================================= */
 
 .explore-button,
@@ -218,10 +277,6 @@ img {
     font-weight: bold;
 
     border-radius: 30px;
-
-    transition:
-        background-color 0.2s ease,
-        transform 0.2s ease;
 }
 
 .explore-button:hover,
@@ -232,50 +287,42 @@ img {
 
 
 /* =========================================================
-   7. MAIN CONTENT
+   11. MAIN
    ========================================================= */
 
 main {
     max-width: 1150px;
-
+    width: 100%;
     margin: 0 auto;
-
     padding: 90px 25px;
+    min-width: 0;
 }
 
 
 /* =========================================================
-   8. SECTION HEADINGS
+   12. SECTION HEADINGS
    ========================================================= */
 
 .section-heading {
     text-align: center;
-
     max-width: 700px;
-
     margin: 0 auto 55px;
 }
 
 .section-label {
     color: var(--brand-color);
-
     font-size: 13px;
     font-weight: bold;
-
     letter-spacing: 3px;
-
     margin-bottom: 10px;
 }
 
 .section-heading h1,
 .section-heading h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 48px;
     line-height: 1.15;
-
     color: var(--ink-color);
-
     margin-bottom: 15px;
 }
 
@@ -286,57 +333,33 @@ main {
 
 
 /* =========================================================
-   9. PLACE CARDS - FLEXBOX
+   13. PLACE CARDS
    ========================================================= */
-
-/*
-   6.4 REQUIREMENT:
-   The place cards are arranged using Flexbox.
-
-   flex-wrap allows the cards to move to the next row
-   when there is not enough horizontal space.
-
-   gap provides consistent spacing between cards.
-
-   No media query is needed for this responsive layout.
-*/
 
 .places-section {
     padding-top: 20px;
 }
 
 .places-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
 }
 
 .place-card {
-    flex: 1 1 240px;
-
     background-color: #ffffff;
-
     border-radius: 12px;
 
     padding: 16px;
 
     border-left: 6px solid var(--brand-color);
 
+    margin-bottom: 20px;
+
     overflow: hidden;
 
     box-shadow:
         0 10px 30px rgba(60, 45, 30, 0.10);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-
-    /*
-       No margin-bottom here.
-       The gap on .places-grid controls the spacing.
-       align-items: stretch is the default, so cards
-       in the same row have equal heights.
-    */
 }
 
 .place-card:hover {
@@ -348,16 +371,13 @@ main {
 
 .card-image {
     height: 260px;
-
     overflow: hidden;
-
     border-radius: 8px;
 }
 
 .card-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
@@ -367,18 +387,14 @@ main {
 
 .place-number {
     color: var(--brand-color);
-
     font-size: 13px;
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
 .card-content h3 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 29px;
-
     color: var(--ink-color);
 
     margin: 8px 0 12px;
@@ -386,26 +402,22 @@ main {
 
 .card-content p {
     color: var(--muted-color);
-
     font-size: 15px;
-
     margin-bottom: 12px;
 }
 
 .card-content p:first-of-type {
     color: var(--brand-color);
-
     font-weight: bold;
 }
 
 
 /* =========================================================
-   10. READ MORE
+   14. READ MORE
    ========================================================= */
 
 .read-more {
     display: inline-block;
-
     margin-top: 8px;
 
     color: var(--brand-color);
@@ -426,27 +438,21 @@ main {
 
 
 /* =========================================================
-   11. ABOUT PAGE
+   15. ABOUT PAGE
    ========================================================= */
 
 .about-page {
     display: grid;
-
     grid-template-columns: 350px 1fr;
-
     gap: 70px;
-
     align-items: center;
-
     margin-bottom: 100px;
 }
 
 .about-page-image img {
     width: 100%;
     height: 390px;
-
     object-fit: cover;
-
     border-radius: 12px;
 
     box-shadow:
@@ -455,34 +461,27 @@ main {
 
 .about-page-content h1 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 55px;
     line-height: 1.1;
-
     color: var(--ink-color);
-
     margin-bottom: 8px;
 }
 
 .about-page-content h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 30px;
-
     color: var(--brand-color);
-
     margin-bottom: 22px;
 }
 
 .about-page-content p:not(.section-label) {
     color: var(--muted-color);
-
     margin-bottom: 17px;
 }
 
 
 /* =========================================================
-   12. TRUST CARDS
+   16. TRUST CARDS
    ========================================================= */
 
 .about-details {
@@ -491,23 +490,17 @@ main {
 
 .trust-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 28px;
 }
 
 .info-card {
     background-color: #ffffff;
-
     padding: 30px;
-
     border-radius: 10px;
 
     box-shadow:
         0 10px 30px rgba(60, 45, 30, 0.10);
-
-    transition: transform 0.2s ease;
 }
 
 .info-card:hover {
@@ -516,49 +509,40 @@ main {
 
 .info-number {
     color: var(--brand-color);
-
     font-size: 13px;
     font-weight: bold;
-
     letter-spacing: 2px;
 }
 
 .info-card h3 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 25px;
-
     color: var(--ink-color);
-
     margin: 8px 0 12px;
 }
 
 .info-card p {
     color: var(--muted-color);
-
     font-size: 15px;
 }
 
 
 /* =========================================================
-   13. CONTACT PAGE
+   17. CONTACT PAGE
    ========================================================= */
 
 .contact-page {
     min-height: 60vh;
-
     padding-top: 10px;
 }
 
 .contact-card {
     max-width: 780px;
-
     margin: 0 auto;
 
     padding: 45px;
 
     background-color: #ffffff;
-
     border-radius: 18px;
 
     border-top: 5px solid var(--brand-color);
@@ -569,21 +553,8 @@ main {
 
 .contact-card h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 34px;
-
     color: var(--ink-color);
-
-    margin-bottom: 12px;
-}
-
-.contact-card h3 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 28px;
-
-    color: var(--ink-color);
-
     margin-bottom: 12px;
 }
 
@@ -593,24 +564,19 @@ main {
 
 
 /* =========================================================
-   14. FORM
+   18. FORM
    ========================================================= */
 
 .contact-card form {
     width: 100%;
-
     margin-top: 30px;
 }
 
 .contact-card fieldset {
     border: 1px solid #dfd2c3;
-
     border-radius: 14px;
-
     padding: 30px;
-
     margin: 0 0 22px;
-
     background-color: #fffdfa;
 }
 
@@ -620,7 +586,6 @@ main {
     color: var(--brand-color);
 
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 18px;
     font-weight: bold;
 }
@@ -631,47 +596,34 @@ main {
 
 .form-group > label {
     display: block;
-
     margin-bottom: 8px;
 
     color: var(--ink-color);
-
     font-size: 15px;
     font-weight: bold;
 }
-
-
-/* =========================================================
-   15. INPUTS AND TEXTAREA
-   ========================================================= */
 
 .form-group input:not([type="radio"]):not([type="checkbox"]),
 .form-group select,
 .form-group textarea {
     display: block;
-
     width: 100%;
 
     padding: 13px 15px;
 
     border: 1px solid #d8cabc;
-
     border-radius: 9px;
 
     background-color: #ffffff;
-
     color: var(--ink-color);
 
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 15px;
-
     line-height: 1.5;
 }
 
 .form-group textarea {
     min-height: 160px;
-
     resize: vertical;
 }
 
@@ -681,34 +633,28 @@ main {
     border-color: var(--brand-color);
 
     outline: 3px solid var(--brand-color);
-
     outline-offset: 2px;
 }
 
 
 /* =========================================================
-   16. RADIO AND CHECKBOX
+   19. RADIO AND CHECKBOX
    ========================================================= */
 
 .form-group:has(input[type="radio"]),
 .form-group:has(input[type="checkbox"]) {
     display: flex;
-
     align-items: center;
-
     gap: 12px;
 
     min-height: 45px;
-
     margin-bottom: 12px;
-
     padding: 10px 12px;
 }
 
 .form-group:has(input[type="radio"]) > label,
 .form-group:has(input[type="checkbox"]) > label {
     margin: 0;
-
     cursor: pointer;
 }
 
@@ -722,35 +668,29 @@ main {
 
 
 /* =========================================================
-   17. SEND BUTTON
+   20. SEND BUTTON
    ========================================================= */
 
 .send-button,
 .contact-card button {
     display: block;
-
     width: 100%;
 
     background-color: var(--brand-color);
-
     color: #ffffff;
 
     padding: 14px 25px;
 
     border: none;
-
     border-radius: 30px;
 
     margin-top: 8px;
 
     font-family: Arial, Helvetica, sans-serif;
-
     font-size: 15px;
     font-weight: bold;
 
     cursor: pointer;
-
-    transition: background-color 0.2s ease;
 }
 
 .send-button:hover,
@@ -761,55 +701,45 @@ main {
 .send-button:focus,
 .contact-card button:focus {
     outline: 3px solid var(--brand-color);
-
     outline-offset: 3px;
 }
 
 
 /* =========================================================
-   18. SUCCESS MESSAGE
+   21. SUCCESS MESSAGE
    ========================================================= */
 
 .success-message {
     margin-top: 22px;
-
     padding: 15px 18px;
 
     border-left: 4px solid #7b9a6b;
-
     border-radius: 8px;
 
     background-color: #edf5e9;
-
     color: #3f6134 !important;
 
     font-size: 15px;
-
     font-weight: bold;
 }
 
 
 /* =========================================================
-   19. OTHER CONTACT
+   22. OTHER CONTACT
    ========================================================= */
 
 .other-contact {
     margin-top: 45px;
-
     padding-top: 35px;
-
     border-top: 1px solid #e5ddd4;
 }
 
 .contact-list {
     padding-left: 25px;
-
-    margin-top: 15px;
 }
 
 .contact-list li {
     color: var(--muted-color);
-
     margin-bottom: 14px;
 }
 
@@ -819,30 +749,24 @@ main {
 
 .contact-list a {
     color: var(--brand-color);
-
     font-weight: bold;
-
     text-decoration: none;
 }
 
 
 /* =========================================================
-   20. PLACE DETAIL PAGE
+   23. PLACE DETAIL PAGE
    ========================================================= */
 
 .place-detail {
     max-width: 1050px;
-
     margin: 0 auto;
-
     padding: 80px 25px 110px;
 }
 
 .detail-header {
     max-width: 850px;
-
     margin: 0 auto 55px;
-
     text-align: center;
 }
 
@@ -852,7 +776,6 @@ main {
 
     font-size: 13px;
     font-weight: bold;
-
     letter-spacing: 3px;
 
     margin-bottom: 14px;
@@ -860,40 +783,33 @@ main {
 
 .detail-header h1 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: clamp(45px, 6vw, 70px);
-
     line-height: 1.05;
 
     color: var(--ink-color);
-
     margin-bottom: 18px;
 }
 
 .detail-intro {
     max-width: 720px;
-
     margin: 0 auto;
 
     color: var(--muted-color);
-
     font-size: 18px;
 }
 
 
 /* =========================================================
-   21. PLACE DETAIL IMAGE
+   24. PLACE DETAIL IMAGE
    ========================================================= */
 
 .detail-image {
     width: 100%;
-
     max-width: 1000px;
 
     margin: 0 auto 70px;
 
     overflow: hidden;
-
     border-radius: 16px;
 
     box-shadow:
@@ -902,20 +818,17 @@ main {
 
 .detail-image img {
     width: 100%;
-
     height: 560px;
-
     object-fit: cover;
 }
 
 
 /* =========================================================
-   22. PLACE DETAIL CONTENT
+   25. PLACE DETAIL CONTENT
    ========================================================= */
 
 .detail-content {
     max-width: 900px;
-
     margin: 0 auto;
 }
 
@@ -927,36 +840,29 @@ main {
     font-family: Georgia, "Times New Roman", serif;
 
     font-size: 38px;
-
     line-height: 1.15;
 
     color: var(--ink-color);
-
     margin-bottom: 20px;
 }
 
 .detail-section p {
     color: var(--muted-color);
-
     font-size: 17px;
-
     line-height: 1.9;
-
     margin-bottom: 18px;
 }
 
 
 /* =========================================================
-   23. DETAILS TABLE
+   26. DETAILS TABLE
    ========================================================= */
 
 .details-table-wrapper {
     width: 100%;
-
     overflow-x: auto;
 
     background-color: #ffffff;
-
     border-radius: 12px;
 
     box-shadow:
@@ -965,16 +871,13 @@ main {
 
 .details-table {
     width: 100%;
-
     border-collapse: collapse;
-
     min-width: 600px;
 }
 
 .details-table th,
 .details-table td {
     padding: 18px 22px;
-
     text-align: left;
 
     border-bottom: 1px solid #e5ddd4;
@@ -984,30 +887,25 @@ main {
     width: 32%;
 
     background-color: #eee5d9;
-
     color: var(--ink-color);
 
     font-size: 14px;
-
     font-weight: bold;
 }
 
 .details-table td {
     color: var(--muted-color);
-
     background-color: #ffffff;
-
     font-size: 15px;
 }
 
 
 /* =========================================================
-   24. BACK BUTTON
+   27. BACK BUTTON
    ========================================================= */
 
 .back-button {
     margin-top: 5px;
-
     background-color: var(--ink-color);
 }
 
@@ -1017,24 +915,20 @@ main {
 
 
 /* =========================================================
-   25. FOOTER
+   28. FOOTER
    ========================================================= */
 
 footer {
     background-color: var(--ink-color);
-
     color: #ffffff;
 
     text-align: center;
-
     padding: 50px 20px;
 }
 
 footer h2 {
     font-family: Georgia, "Times New Roman", serif;
-
     font-size: 25px;
-
     margin-bottom: 8px;
 }
 
@@ -1044,26 +938,29 @@ footer p {
 
 footer .copyright {
     margin-top: 25px;
-
     font-size: 13px;
-
     color: #a99e92;
 }
 
 
 /* =========================================================
-   26. OTHER RESPONSIVE PAGE ELEMENTS
+   29. RESPONSIVE ADJUSTMENTS
    ========================================================= */
-
-/*
-   These rules are only for other page sections.
-   The Places cards themselves are already responsive
-   through Flexbox using flex-wrap and flex-basis.
-*/
 
 @media (max-width: 850px) {
 
-    .site-header {
+    .page {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "masthead"
+            "main"
+            "side"
+            "foot";
+    }
+
+    .top-navigation,
+    .nav-container {
         padding: 20px;
     }
 
@@ -1077,6 +974,16 @@ footer .copyright {
         margin: auto;
     }
 
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .place-card {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+
     .trust-grid {
         grid-template-columns: 1fr;
     }
@@ -1087,25 +994,22 @@ footer .copyright {
 }
 
 
+/* =========================================================
+   30. MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
 
-    .site-header {
-        min-height: 70px;
-        padding: 16px 18px;
-        gap: 12px;
+    .top-navigation,
+    .nav-container {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
     }
 
-    .site-logo {
-        font-size: 17px;
-    }
-
-    .site-header nav ul {
-        gap: 12px;
-    }
-
-    .site-header nav a {
-        font-size: 13px;
-        padding: 5px 2px;
+    nav li {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
     main {
@@ -1114,10 +1018,9 @@ footer .copyright {
 
     .hero {
         min-height: 75vh;
-        padding: 50px 18px;
     }
 
-    .hero h2 {
+    .hero h1 {
         font-size: 42px;
     }
 
@@ -1170,26 +1073,26 @@ footer .copyright {
 }
 
 
+/* =========================================================
+   31. SMALL PHONES
+   ========================================================= */
+
 @media (max-width: 420px) {
 
-    .site-header {
-        padding: 14px 12px;
-        gap: 8px;
-    }
-
     .site-logo {
-        font-size: 15px;
+        font-size: 18px;
     }
 
-    .site-header nav ul {
-        gap: 8px;
+    nav li {
+        margin-left: 6px;
+        margin-right: 6px;
     }
 
-    .site-header nav a {
-        font-size: 12px;
+    nav a {
+        font-size: 14px;
     }
 
-    .hero h2 {
+    .hero h1 {
         font-size: 36px;
     }
 
