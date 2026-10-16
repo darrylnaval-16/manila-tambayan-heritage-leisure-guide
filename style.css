@@ -1506,3 +1506,54 @@ footer .copyright {
         height: 560px;
     }
 }
+
+
+/* ========================================
+   12. JAVASCRIPT DECISION SECTION
+======================================== */
+
+.decision-section {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto 40px;
+    padding: 24px 15px;
+}
+
+.decision-section .section-heading {
+    margin-bottom: 24px;
+}
+
+.decision-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--brand-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 5px 18px rgba(48, 40, 32, 0.08);
+}
+
+.decision-card h3 {
+    color: var(--ink-color);
+    margin-bottom: 10px;
+}
+
+.decision-card p {
+    color: var(--muted-color);
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+
+.decision-card strong {
+    color: var(--ink-color);
+}
+
+@media (min-width: 700px) {
+    .decision-section {
+        padding: 30px 24px;
+    }
+
+    .decision-card {
+        padding: 24px;
+    }
+}

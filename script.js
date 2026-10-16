@@ -50,7 +50,80 @@ if (placeCountElement) {
 
 
 /* ========================================
-   5. CONTACT FORM
+   5. RATING LABEL DECISION
+======================================== */
+
+// Sample rating for the National Museum.
+// Change this number to test the other labels.
+const placeRating = 4.5;
+
+let ratingLabel;
+
+if (placeRating >= 4) {
+    ratingLabel = "Highly recommended";
+} else if (placeRating >= 2.5) {
+    ratingLabel = "Worth a visit";
+} else {
+    ratingLabel = "Only if you're nearby";
+}
+
+const ratingValueElement = document.getElementById("ratingValue");
+const ratingLabelElement = document.getElementById("ratingLabel");
+
+if (ratingValueElement) {
+    ratingValueElement.textContent = `${placeRating} out of 5`;
+}
+
+if (ratingLabelElement) {
+    ratingLabelElement.textContent = ratingLabel;
+}
+
+
+/* ========================================
+   6. BUDGET CHECK DECISION
+======================================== */
+
+// Sample guide settings for this activity.
+// Price level 0 means free; 1 means budget-friendly.
+// isPlaceOpen is a sample value, not live opening-hour data.
+const priceLevel = 0;
+const isPlaceOpen = true;
+
+const isBudgetFriendly = priceLevel <= 1;
+
+const budgetMessage =
+    isBudgetFriendly && isPlaceOpen === true
+        ? "Good option right now"
+        : "Maybe another time";
+
+const budgetValueElement = document.getElementById("budgetValue");
+
+if (budgetValueElement) {
+    budgetValueElement.textContent = budgetMessage;
+}
+
+
+/* ========================================
+   7. DISTANCE NOTE DECISION
+======================================== */
+
+// Sample value for this activity.
+const isWithinWalkingDistance = true;
+
+const distanceMessage =
+    isWithinWalkingDistance === true
+        ? "Walking distance"
+        : "Better to commute";
+
+const distanceValueElement = document.getElementById("distanceValue");
+
+if (distanceValueElement) {
+    distanceValueElement.textContent = distanceMessage;
+}
+
+
+/* ========================================
+   8. CONTACT FORM
 ======================================== */
 
 const contactForm = document.getElementById("contact-form");
@@ -72,7 +145,7 @@ if (contactForm && successMessage) {
 
 
 /* ========================================
-   6. SUGGEST A PLACE FORM
+   9. SUGGEST A PLACE FORM
 ======================================== */
 
 const suggestPlaceForm =
@@ -97,9 +170,13 @@ if (suggestPlaceForm && suggestSuccessMessage) {
 
 
 /* ========================================
-   7. CONSOLE MESSAGES
+   10. CONSOLE MESSAGES
 ======================================== */
 
 console.log("Guide Name:", guideName);
 console.log("Current Year:", currentYear);
 console.log("Places Reviewed:", runningCount);
+console.log("Place Rating:", placeRating);
+console.log("Rating Decision:", ratingLabel);
+console.log("Budget Decision:", budgetMessage);
+console.log("Distance Decision:", distanceMessage);

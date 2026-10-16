@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manila Tambayan Heritage & Leisure Guide</title>
+    <title>Manila Heritage & Leisure Guide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -53,7 +53,7 @@
 
         </header>
 
-        <!-- SIDEBAR -->
+        <!-- PAGE GRID SIDEBAR -->
         <aside class="guide-sidebar">
             <h2>Quick Guide</h2>
 
@@ -79,6 +79,7 @@
         <!-- MAIN CONTENT -->
         <main>
 
+            <!-- PLACES SECTION -->
             <section class="places-section" id="places">
 
                 <div class="section-heading">
@@ -94,9 +95,10 @@
                     </p>
                 </div>
 
-                <!-- COMPUTED PLACE COUNT -->
+                <!-- PLACE COUNT -->
                 <p class="places-count">
-                    Places reviewed: <strong id="placeCount">0</strong>
+                    Places reviewed:
+                    <strong id="placeCount">0</strong>
                 </p>
 
                 <div class="places-grid">
@@ -115,7 +117,9 @@
 
                             <h3>National Museum</h3>
 
-                            <p>Manila, Philippines</p>
+                            <p class="place-location">
+                                Manila, Philippines
+                            </p>
 
                             <p>
                                 I recommend museums because they are wonderful
@@ -146,7 +150,9 @@
 
                             <h3>Luneta Park</h3>
 
-                            <p>Ermita, Manila, Philippines</p>
+                            <p class="place-location">
+                                Ermita, Manila, Philippines
+                            </p>
 
                             <p>
                                 I recommend Luneta Park because it is an enjoyable
@@ -175,7 +181,9 @@
 
                             <h3>Intramuros</h3>
 
-                            <p>Intramuros, Manila, Philippines</p>
+                            <p class="place-location">
+                                Intramuros, Manila, Philippines
+                            </p>
 
                             <p>
                                 I recommend Intramuros because during our first
@@ -188,6 +196,70 @@
                                 past.
                             </p>
                         </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- JAVASCRIPT DECISIONS -->
+            <section class="decision-section" id="guide-decisions">
+
+                <div class="section-heading">
+                    <p class="section-label">SMART GUIDE</p>
+
+                    <h2>Place Guide Decisions</h2>
+
+                    <p>
+                        Check the sample rating, budget status, and distance
+                        information for the National Museum.
+                    </p>
+                </div>
+
+                <div class="decision-grid">
+
+                    <!-- RATING DECISION -->
+                    <article class="decision-card">
+                        <span class="decision-number">01</span>
+
+                        <h3>Place Rating</h3>
+
+                        <p>
+                            Rating:
+                            <strong id="ratingValue">Loading...</strong>
+                        </p>
+
+                        <p>
+                            Recommendation:
+                            <strong id="ratingLabel">Loading...</strong>
+                        </p>
+                    </article>
+
+                    <!-- BUDGET DECISION -->
+                    <article class="decision-card">
+                        <span class="decision-number">02</span>
+
+                        <h3>Budget Check</h3>
+
+                        <p id="budgetValue">Loading...</p>
+
+                        <p class="decision-note">
+                            This result uses the sample budget and open
+                            status set in script.js.
+                        </p>
+                    </article>
+
+                    <!-- DISTANCE DECISION -->
+                    <article class="decision-card">
+                        <span class="decision-number">03</span>
+
+                        <h3>Distance Note</h3>
+
+                        <p id="distanceValue">Loading...</p>
+
+                        <p class="decision-note">
+                            Check the sample distance information before
+                            planning your visit.
+                        </p>
                     </article>
 
                 </div>
@@ -210,8 +282,8 @@
 
     </div>
 
-    <!-- JavaScript must be just before closing body -->
+    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
-</body>
 
+</body>
 </html>
